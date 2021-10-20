@@ -68,7 +68,6 @@ class GoogleMapSection extends StatelessWidget {
   }
 
   void _onCameraMoveEnd() {
-    print("test");
     gMapCtrl.moveCameraEnd();
 
 
