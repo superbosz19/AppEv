@@ -1,0 +1,2 @@
+flutter pub add provider
+flutter pub add google_maps_flutter
