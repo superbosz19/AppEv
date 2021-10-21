@@ -12,12 +12,11 @@ class _HelpScreenState extends State<HelpScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       /*appBar: AppBar(
-
         title: Text(widget.title),
       ),*/
       body: Column(
           children: [
-            SizedBox(height: 100),
+            SizedBox(height: 80),
             Container(
                 padding: EdgeInsets.only(left: 20),
                 alignment: Alignment.topLeft,
@@ -28,7 +27,7 @@ class _HelpScreenState extends State<HelpScreen> {
                       color: Colors.grey),
                 )
             ),
-            SizedBox(height: 70),
+            SizedBox(height: 50),
             Column(
               children: [
                 GestureDetector(
@@ -42,7 +41,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.only(left: 40),
+                    padding: EdgeInsets.only(left: 30),
                     height: 70,
                     width: double.infinity,
                     decoration: BoxDecoration( //เส้นใน Container
@@ -79,7 +78,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.only(left: 40),
+                    padding: EdgeInsets.only(left: 30),
                     height: 70,
                     width: double.infinity,
                     /*decoration: BoxDecoration( //เส้นใน Container
@@ -112,7 +111,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.only(left: 40),
+                    padding: EdgeInsets.only(left: 30),
                     height: 70,
                     width: double.infinity,
                     decoration: BoxDecoration( //เส้นใน Container
@@ -145,7 +144,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.only(left: 40),
+                    padding: EdgeInsets.only(left: 30),
                     height: 70,
                     width: double.infinity,
                     /*decoration: BoxDecoration( //เส้นใน Container
@@ -179,7 +178,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     );
                   },
                   child: Container(
-                    padding: EdgeInsets.only(left: 40),
+                    padding: EdgeInsets.only(left: 30),
                     height: 70,
                     width: double.infinity,
                     decoration: BoxDecoration( //เส้นใน Container
@@ -203,23 +202,38 @@ class _HelpScreenState extends State<HelpScreen> {
                 )
               ],
             ),
-            SizedBox(height: 25),
-            Center(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 100,
-                  //right: 80
-                ),
-                child: Row(
-                  children: [
-                    Container(
-                      child: Text("more help please ",
-                        style: TextStyle(fontSize: 16),
+            SizedBox(height: 20),
+            Container(
+              //color: Colors.redAccent,
+              child: Center(
+                child: Padding(
+                  padding: const EdgeInsets.only(
+                    left: 80,
+                    right: 80
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        child: Text("More help please ! ",
+                          style: TextStyle(fontSize: 16),
+                        ),
                       ),
-                    ),
-                    TextButton(onPressed: () {},
+                      TextButton(onPressed: () {
+                        Navigator.push(
+                          context, MaterialPageRoute(
+                          builder: (context) {
+                            return Scaffold();
+                          },
+                        ),
+                        );
+                      },
 
-                        child: Text("Contact me"))
-                  ],
+                          child: Text("Contact me.",
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                fontSize: 16),),)
+                    ],
+                  ),
                 ),
               ),
             )
