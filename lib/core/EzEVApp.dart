@@ -11,6 +11,7 @@ import 'package:ez_mobile/view/pages/PaymentConfig/AddPaymentPage.dart';
 import 'package:ez_mobile/view/pages/PaymentConfig/PaymentConfigPage.dart';
 import 'package:ez_mobile/view/pages/chageAvatar/ChangeAvatarPage.dart';
 import 'package:ez_mobile/view/pages/favorite/FavoritePage.dart';
+import 'package:ez_mobile/view/pages/help/help_screen.dart';
 import 'package:ez_mobile/view/pages/history/ChargeHistoryPage.dart';
 import 'package:ez_mobile/view/pages/idcard/IDCardPage.dart';
 import 'package:ez_mobile/view/pages/login/LoginPage.dart';
@@ -49,7 +50,7 @@ class EzEVApp extends StatelessWidget{
           GetPage(name: "/scan-qr", page:()=> ScanPage(),),
           GetPage(name: "/profile-page", page:()=> ProfilePage(),),
           GetPage(name: "/charge-history", page:()=> ChargeHistoryPage(),),
-          GetPage(name: "/help-page", page:()=> ScanPage(),),
+          GetPage(name: "/help-page", page:()=> HelpScreen(),),
           GetPage(name: "/login", page:()=> LoginPage(),),
           GetPage(name: "/signup", page:()=> SignupPage(),),
           GetPage(name: "/confirm-signup", page:()=> ConfirmSignupPage(),),
