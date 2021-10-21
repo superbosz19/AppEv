@@ -16,9 +16,11 @@ class _HelpScreenState extends State<HelpScreen> {
       ),*/
       body: Column(
           children: [
-            SizedBox(height: 80),
+            //SizedBox(height: 80),
             Container(
-                padding: EdgeInsets.only(left: 20),
+              //color: Colors.redAccent,
+                padding: EdgeInsets.only(top: 80,bottom: 50,left: 30),
+                //margin: EdgeInsets.symmetric(horizontal: 40.0),
                 alignment: Alignment.topLeft,
                 child:
                 Text("Help",
@@ -27,7 +29,7 @@ class _HelpScreenState extends State<HelpScreen> {
                       color: Colors.grey),
                 )
             ),
-            SizedBox(height: 50),
+            //SizedBox(height: 50),
             Column(
               children: [
                 GestureDetector(
