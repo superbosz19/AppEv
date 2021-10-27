@@ -228,14 +228,14 @@ class _HelpScreenState extends State<HelpScreen> {
               child: Center(
                 child: Padding(
                   padding: const EdgeInsets.only(
-                    left: 70,
+                    left: 60,
                     //right: 50
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.contact_support_outlined),
+                      Icon(Icons.help_center_rounded,color: Colors.black12, ),
                       Container(
-                        child: Text(" More help please |",
+                        child: Text("  More help please |",
                           style: TextStyle(fontSize: 16),
                         ),
 
@@ -256,7 +256,7 @@ class _HelpScreenState extends State<HelpScreen> {
                                 fontSize: 16),),),
                       Text("|",style: TextStyle(fontSize: 16),),
                       SizedBox(width: 2,),
-                      Icon(Icons.eco,color: Colors.green,),
+                      //Icon(Icons.eco,color: Colors.green,),
                     ],
                   ),
                 ),

@@ -40,24 +40,26 @@ class LoginPage extends StatelessWidget{
                      // CloseButton(),
                       Center(
                         child: Padding(
-                          padding: const EdgeInsets.only(top:40),
+                          padding: const EdgeInsets.only(top:30),
                           child: Text(
                             "Welcome Back !",
                             style: Theme.of(context)
                                 .textTheme
                                 .headline6
-                                .copyWith(fontWeight: FontWeight.bold, fontSize: 28),
+                                .copyWith(fontWeight: FontWeight.bold, fontSize: 30),
                           ),
                         ),
                       ),
                       SizedBox(
                         height: 20,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(70, 0, 0, 0),
-                        child: Text(
-                          "Sign in with your email and password  \nor continue with social media.",
-                          textAlign: TextAlign.center,
+                      Center(
+                        child: Padding(
+                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          child: Text(
+                            "Sign in with your email and password  \nor continue with social media.",
+                            textAlign: TextAlign.center,style: TextStyle(fontSize: 16),
+                          ),
                         ),
                       ),
                       SizedBox(height: 20,),
@@ -78,26 +80,29 @@ class LoginPage extends StatelessWidget{
                         onChange: ctrl.pwd1Changed,
                       ),
 
+                      // SizedBox(
+                      //   height: 10,
+                      // ),
                       SizedBox(
                         height: 10,
                       ),
-                      SizedBox(
-                        height: 20,
-                      ),
                       Row(
                         children: [
-                          Checkbox(
-                            value: false,
-                            onChanged: (value) {},
-                          ),
-                          Text("Remember me"),
-                          Spacer(),
+                          // Checkbox(
+                          //   value: false,
+                          //   onChanged: (value) {},
+                          // ),
+                          // Text("Remember me"),
+                           Spacer(),
                           TextButton(
                             onPressed: () {},
                             child: Text(
                               "Forget Password",
                               style: TextStyle(decoration: TextDecoration.underline),
                             ),
+                          ),
+                          SizedBox(
+                              width: 10
                           ),
                         ],
                       ),
@@ -160,12 +165,13 @@ class LoginPage extends StatelessWidget{
 
                                 children: [
                                   Text("Don't have an account?"),
-                                  SizedBox(width: 10,),
+                                  SizedBox(width: 5.0,),
                                   Text("Sign up", style: TextStyle(
                                     fontSize: 16,
                                     color :_theme.secondaryColor,
                                     decoration: TextDecoration.underline
-                                  )),
+                                  ),
+                                  ),
                                 ],
                               ),
                             ),

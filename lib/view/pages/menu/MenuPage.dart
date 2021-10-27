@@ -122,7 +122,7 @@ class MenuList extends StatelessWidget {
                         onTap: () { Get.toNamed("/login");},
                       ),
 
-                      Icon(Icons.eco,color: Colors.green,)
+                      //Icon(Icons.eco,color: Colors.green,)
                     ],
                   ),
                   SizedBox(height: 5,),
@@ -142,7 +142,7 @@ class MenuList extends StatelessWidget {
                        // iconSize: 30,
                         onTap: () { Get.toNamed("/help-page");},
                       ),
-                      Icon(Icons.eco,color: Colors.green,)
+                     // Icon(Icons.eco,color: Colors.green,)
                     ],
                   ),
                   SizedBox(height: 20,),
@@ -201,7 +201,7 @@ class MenuList extends StatelessWidget {
                               ),
                             ),
                             SizedBox(width: 5,),
-                            Icon(Icons.eco,color: Colors.green,)
+                            //Icon(Icons.eco,color: Colors.green,)
                           ],
                         ),
                       ),
@@ -241,7 +241,7 @@ class MenuList extends StatelessWidget {
                               Get.toNamed("/payment-config");
                             },
                         ),
-                        Icon(Icons.eco_outlined,color: Colors.green,)
+                       // Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
                     SizedBox(height: 10,),
@@ -254,7 +254,7 @@ class MenuList extends StatelessWidget {
                           // iconSize: 30,
                           onTap: () { Get.to(() => FavoritePage());},
                         ),
-                        Icon(Icons.eco_outlined,color: Colors.green,)
+                        //Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
                     SizedBox(height: 10,),
@@ -267,7 +267,7 @@ class MenuList extends StatelessWidget {
                           // iconSize: 30,
                           onTap: () { Get.toNamed("/charge-history");},
                         ),
-                        Icon(Icons.eco_outlined,color: Colors.green,)
+                        //Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
                     SizedBox(height: 10,),
@@ -280,7 +280,7 @@ class MenuList extends StatelessWidget {
                           // iconSize: 30,
                           onTap: () { Get.toNamed("/help-page");},
                         ),
-                        Icon(Icons.eco_outlined,color: Colors.green,)
+                        //Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
                     SizedBox(height: 10,),
@@ -308,7 +308,7 @@ class MenuList extends StatelessWidget {
                             );
                             },
                         ),
-                        Icon(Icons.eco_outlined,color: Colors.redAccent,)
+                       // Icon(Icons.eco_outlined,color: Colors.redAccent,)
                       ],
                     ),
                     SizedBox(height: 5,),
