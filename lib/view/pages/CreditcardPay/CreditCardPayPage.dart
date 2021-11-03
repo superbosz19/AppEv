@@ -16,7 +16,7 @@ class CreditCardPage extends StatelessWidget {
           print("CreditCardPage=> ctrl.transaction.status => ${ctrl.transaction.status}");
           if (ctrl.transaction== null || ctrl.transaction.status ==null || ctrl.transaction.status == "PREPARE") {
             print("CreditCardPage=> prepare");
-            print("https://ezev.app/bank-payment?amt=${ctrl.transaction.prepaidCostFormatted}&ref1=${ctrl.transaction.transID}");
+            print("https://ezev.app/bank-payment-prd?amt=${ctrl.transaction.prepaidCostFormatted}&ref1=${ctrl.transaction.transID}");
             return Scaffold(
               resizeToAvoidBottomInset: true,
               appBar: AppBar(
@@ -28,7 +28,7 @@ class CreditCardPage extends StatelessWidget {
               ),
               body: Material(
                 child: WebView(
-                  initialUrl: "https://ezev.app/bank-payment?amt=${ctrl.transaction.prepaidCostFormatted}&ref1=${ctrl.transaction.transID}",
+                  initialUrl: "https://ezev.app/bank-payment-prd?amt=${ctrl.transaction.prepaidCostFormatted}&ref1=${ctrl.transaction.transID}", // ตรงนี้
                   javascriptMode: JavascriptMode.unrestricted,
                 ),
               ),
