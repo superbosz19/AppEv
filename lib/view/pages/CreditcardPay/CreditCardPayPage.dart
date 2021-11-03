@@ -43,6 +43,4 @@ class CreditCardPage extends StatelessWidget {
         }
     );
   }
-
-
 }
