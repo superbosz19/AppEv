@@ -12,21 +12,44 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0,top: 2.5),
+            child: IconButton(
+                onPressed: () => Get.back(),
+                icon: Icon(
+                  Icons.menu_rounded,
+                  color: Colors.black,
+                  size: 36,
+                )),
+          )
+          // MenuButton(
+          //   alignment: Alignment.topLeft,
+          //   menuClick: () => Get.back(),
+          // )
+        ],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12.0,top: 3.0),
+          child: Image.asset("images/Easy-Charge.png",width: 160,height: 160,),
+        ),
+      ),
       resizeToAvoidBottomInset: true,
       body: Material(
         child: Stack(
           children: [
             MenuList(),
-            MenuButton(
-              alignment: Alignment.topLeft,
-              menuClick: () => Get.back(),//Get.toNamed("/"),
-            ),
+            // MenuButton(
+            //   alignment: Alignment.topLeft,
+            //   menuClick: () => Get.back(),//Get.toNamed("/"),
+            // ),
           ],
         ),
       ),
     );
   }
-
 }
 
 class MenuListButton extends StatelessWidget {
@@ -40,16 +63,16 @@ class MenuListButton extends StatelessWidget {
 
   VoidCallback onTap;
 
-  MenuListButton(
-      {Key key,
-        this.icon,
-        this.iconSize,
-        this.spaceW: 0,
-        this.fontSize: 20 /*25*/,
-        this.onTap,
-        this.menuText,
-        this.Color,
-      }) {
+  MenuListButton({
+    Key key,
+    this.icon,
+    this.iconSize,
+    this.spaceW: 0,
+    this.fontSize: 20 /*25*/,
+    this.onTap,
+    this.menuText,
+    this.Color,
+  }) {
     _theme = CustomTheme.instance;
   }
 
@@ -63,7 +86,10 @@ class MenuListButton extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           // mainAxisSize: MainAxisSize.max,
           children: [
-            Icon(icon, size: iconSize,),
+            Icon(
+              icon,
+              size: iconSize,
+            ),
             SizedBox(
               width: spaceW,
             ),
@@ -83,10 +109,9 @@ class MenuListButton extends StatelessWidget {
   }
 }
 
-
 class MenuList extends StatelessWidget {
   CustomTheme _theme = CustomTheme.instance;
-  final double _spaceH = 24;//30;
+  final double _spaceH = 24; //30;
 
   @override
   Widget build(BuildContext context) {
@@ -96,70 +121,93 @@ class MenuList extends StatelessWidget {
       init: Get.find<AuthController>(),
       initState: (_) {},
       builder: (ctrl) {
-        if (ctrl.user == null || ctrl.user.email == null){
+        if (ctrl.user == null || ctrl.user.email == null) {
           return Container(
             height: 280,
             //color: Colors.greenAccent,
             decoration: BoxDecoration(
-            color: Color(0xFFE5E6E7),
+                color: Color(0xFFE5E6E7),
                 borderRadius: BorderRadius.only(
-                    bottomLeft: Radius.circular(36),
-                    bottomRight: Radius.circular(36)
-                  ,)
-            ),
+                  bottomLeft: Radius.circular(36),
+                  bottomRight: Radius.circular(36),
+                )),
             child: Padding(
-              padding: const EdgeInsets.only(top: kToolbarHeight * 2, left: 10),
+              padding: const EdgeInsets.only(
+                  top: 30,
+                  //top: kToolbarHeight * 2,
+                  left: 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Row(
                     children: [
-                      Icon(Icons.commute_outlined,size: 40,),
+                      Icon(
+                        Icons.commute_outlined,
+                        size: 40,
+                      ),
                       MenuListButton(
                         menuText: "Log In",
                         //icon: Icons.login,
                         //iconSize: 30,
-                        onTap: () { Get.toNamed("/login");},
+                        onTap: () {
+                          Get.toNamed("/login");
+                        },
                       ),
 
                       //Icon(Icons.eco,color: Colors.green,)
                     ],
                   ),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   // MenuListButton(
                   //   menuText: "Sing Up",
                   //   icon: Icons.app_registration,
                   //   iconSize: 30,
                   //   onTap: () { Get.toNamed("/signup");},
                   // ),
-                  SizedBox(height: 5,),
+                  SizedBox(
+                    height: 5,
+                  ),
                   Row(
                     children: [
-                      Icon(Icons.help_outline,size: 40,),
+                      Icon(
+                        Icons.help_outline,
+                        size: 40,
+                      ),
                       MenuListButton(
                         menuText: "Help",
                         //icon: Icons.help_outline,
-                       // iconSize: 30,
-                        onTap: () { Get.toNamed("/help-page");},
+                        // iconSize: 30,
+                        onTap: () {
+                          Get.toNamed("/help-page");
+                        },
                       ),
-                     // Icon(Icons.eco,color: Colors.green,)
+                      // Icon(Icons.eco,color: Colors.green,)
                     ],
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(left: 80,),
+                        padding: const EdgeInsets.only(
+                          left: 80,
+                        ),
                         child: Text("Don't have an account?  "),
                       ),
-                      TextButton(onPressed: () {Get.toNamed("/help-page");},
-                      child:
-                      Text("Sign up", style: TextStyle(
-                          fontSize: 16,
-                          color :_theme.secondaryColor,
-                          decoration: TextDecoration.underline
-                      ),
-                      ),
+                      TextButton(
+                        onPressed: () {
+                          Get.toNamed("/help-page");
+                        },
+                        child: Text(
+                          "Sign up",
+                          style: TextStyle(
+                              fontSize: 16,
+                              color: _theme.secondaryColor,
+                              decoration: TextDecoration.underline),
+                        ),
                       ),
                     ],
                   )
@@ -167,25 +215,29 @@ class MenuList extends StatelessWidget {
               ),
             ),
           );
-        }else{
+        } else {
           return Container(
             decoration: BoxDecoration(
                 color: Color(0xFFE5E6E7),
-              //color: Colors.lightGreen,
+                //color: Colors.lightGreen,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(46),
-                  bottomRight: Radius.circular(46)
-                  ,)
-            ),
-            child: Padding( //this.icon, this.iconSize, this.spaceW: 20, this.fontSize: 25, this.onTap
-              padding: const EdgeInsets.only(top: kToolbarHeight * 2, left: 10),
+                  bottomRight: Radius.circular(46),
+                )),
+            child: Padding(
+              //this.icon, this.iconSize, this.spaceW: 20, this.fontSize: 25, this.onTap
+              padding: const EdgeInsets.only(
+                  //top: kToolbarHeight * 2,
+                  left: 10),
               child: Container(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(height: 20,),
+                    SizedBox(
+                      height: 10.0,
+                    ),
                     Padding(
-                      padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
+                      padding: const EdgeInsets.fromLTRB(30, 0, 0, 0),
                       child: Container(
                         // color: Colors.green,
                         child: Row(
@@ -197,97 +249,134 @@ class MenuList extends StatelessWidget {
                               style: TextStyle(
                                 color: _theme.darkColor,
                                 decoration: TextDecoration.none,
-                                fontSize:  _spaceH,
+                                fontSize: _spaceH,
                                 fontWeight: FontWeight.w900,
                               ),
                             ),
-                            SizedBox(width: 5,),
+                            SizedBox(
+                              width: 5,
+                            ),
                             //Icon(Icons.eco,color: Colors.green,)
                           ],
                         ),
                       ),
                     ),
-
                     SizedBox(height: _spaceH),
                     Row(
                       children: [
-                        Icon(Icons.person_rounded,size: 34,),
+                        Icon(
+                          Icons.person_rounded,
+                          size: 34,
+                        ),
                         MenuListButton(
                           menuText: "Profile",
                           //icon: Icons.person_rounded,
                           //iconSize: 30,
-                          onTap: (){  Get.toNamed("/profile-page"); },
+                          onTap: () {
+                            Get.toNamed("/profile-page");
+                          },
                         ),
                         //Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
-                        Icon(Icons.payment_rounded,size: 34,),
+                        Icon(
+                          Icons.payment_rounded,
+                          size: 34,
+                        ),
                         MenuListButton(
                           menuText: "Payment",
-                           // icon: Icons.payment_sharp,
-                            //iconSize: 30,
-                            onTap: (){
-                              // Get.snackbar(
-                              //   "Hey i'm a Get SnackBar!", // title
-                              //   "It's unbelievable! I'm using SnackBar without context, without boilerplate, without Scaffold, it is something truly amazing!", // message
-                              //   icon: Icon(Icons.alarm),
-                              //   shouldIconPulse: true,
-                              //   barBlur: 20,
-                              //   isDismissible: true,
-                              //   duration: Duration(seconds: 300),
-                              // );
-                              Get.toNamed("/payment-config");
-                            },
+                          // icon: Icons.payment_sharp,
+                          //iconSize: 30,
+                          onTap: () {
+                            // Get.snackbar(
+                            //   "Hey i'm a Get SnackBar!", // title
+                            //   "It's unbelievable! I'm using SnackBar without context, without boilerplate, without Scaffold, it is something truly amazing!", // message
+                            //   icon: Icon(Icons.alarm),
+                            //   shouldIconPulse: true,
+                            //   barBlur: 20,
+                            //   isDismissible: true,
+                            //   duration: Duration(seconds: 300),
+                            // );
+                            Get.toNamed("/payment-config");
+                          },
                         ),
-                       // Icon(Icons.eco_outlined,color: Colors.green,)
+                        // Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
-                        Icon(Icons.star_border_outlined,size: 34,),
+                        Icon(
+                          Icons.star_border_outlined,
+                          size: 34,
+                        ),
                         MenuListButton(
                           menuText: "Favorites",
                           // icon: Icons.star_border_outlined,
                           // iconSize: 30,
-                          onTap: () { Get.to(() => FavoritePage());},
+                          onTap: () {
+                            Get.to(() => FavoritePage());
+                          },
                         ),
                         //Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
-                        Icon(Icons.access_time_rounded,size: 34,),
+                        Icon(
+                          Icons.access_time_rounded,
+                          size: 34,
+                        ),
                         MenuListButton(
                           menuText: "Charge History",
                           // icon: Icons.access_time_rounded,
                           // iconSize: 30,
-                          onTap: () { Get.toNamed("/charge-history");},
+                          onTap: () {
+                            Get.toNamed("/charge-history");
+                          },
                         ),
                         //Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
-                        Icon(Icons.help_outline,size: 34,),
+                        Icon(
+                          Icons.help_outline,
+                          size: 34,
+                        ),
                         MenuListButton(
                           menuText: "Help",
                           // icon: Icons.help_outline,
                           // iconSize: 30,
-                          onTap: () { Get.toNamed("/help-page");},
+                          onTap: () {
+                            Get.toNamed("/help-page");
+                          },
                         ),
                         //Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
-                    SizedBox(height: 10,),
+                    SizedBox(
+                      height: 10,
+                    ),
                     Row(
                       children: [
-                        Icon(Icons.logout,size: 34,),
+                        Icon(
+                          Icons.logout,
+                          size: 34,
+                        ),
                         MenuListButton(
                           menuText: "Sign Out",
                           // icon: Icons.logout,
@@ -300,19 +389,21 @@ class MenuList extends StatelessWidget {
                               radius: 30,
                               //titleStyle: _theme.boxPrimaryTextBold,
                               backgroundColor: _theme.lightColor,
-                              onConfirm: (){
+                              onConfirm: () {
                                 print("confirm");
                                 Get.find<AuthController>().logout();
                                 Get.back();
                               },
-                              onCancel: (){},
+                              onCancel: () {},
                             );
-                            },
+                          },
                         ),
-                       // Icon(Icons.eco_outlined,color: Colors.redAccent,)
+                        // Icon(Icons.eco_outlined,color: Colors.redAccent,)
                       ],
                     ),
-                    SizedBox(height: 5,),
+                    SizedBox(
+                      height: 5,
+                    ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -324,16 +415,8 @@ class MenuList extends StatelessWidget {
               ),
             ),
           );
-
         }
-
       },
     );
-
-
-
   }
-
-
 }
-

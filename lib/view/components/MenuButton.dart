@@ -3,15 +3,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MenuButton extends StatefulWidget{
+class MenuButton extends StatefulWidget {
   VoidCallback menuClick;
   Alignment alignment;
 
-  MenuButton({this.menuClick: _toMenuPage,this.alignment :Alignment.topLeft });
+  MenuButton({this.menuClick: _toMenuPage, this.alignment: Alignment.topLeft});
 
-
-  static void _toMenuPage(){
-        Get.toNamed("/menu");
+  static void _toMenuPage() {
+    Get.toNamed("/menu");
   }
 
   @override
@@ -24,12 +23,16 @@ class _MenuButtonState extends State<MenuButton> {
     return Align(
       alignment: widget.alignment,
       child: Padding(
-        padding: const EdgeInsets.only(top: kToolbarHeight, left: 7.0, right:10.0),
+        padding:
+            const EdgeInsets.only(top: kToolbarHeight, left: 20.0, right: 30.0),
         child: Material(
           type: MaterialType.transparency,
           child: IconButton(
             splashColor: Colors.grey,
-            icon: Icon(Icons.clear_all_rounded,size: 40,),color: Colors.red,
+            icon: Icon(
+              Icons.menu_rounded,
+              size: 44,color: Colors.pink,
+            ),
             //CustomTheme.instance.menuIcon,
             onPressed: widget.menuClick,
           ),
