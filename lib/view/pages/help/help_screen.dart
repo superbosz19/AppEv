@@ -249,7 +249,6 @@ class _HelpScreenState extends State<HelpScreen> {
                         ),
                         );
                       },
-
                           child: Text("Contact me.",
                             style: TextStyle(
                                 decoration: TextDecoration.underline,

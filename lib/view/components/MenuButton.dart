@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MenuButton extends StatelessWidget{
+class MenuButton extends StatefulWidget{
   VoidCallback menuClick;
   Alignment alignment;
 
@@ -15,21 +15,26 @@ class MenuButton extends StatelessWidget{
   }
 
   @override
+  _MenuButtonState createState() => _MenuButtonState();
+}
+
+class _MenuButtonState extends State<MenuButton> {
+  @override
   Widget build(BuildContext context) {
     return Align(
-      alignment: alignment,
+      alignment: widget.alignment,
       child: Padding(
-        padding: const EdgeInsets.only(top: kToolbarHeight, left: 10.0, right:10.0),
+        padding: const EdgeInsets.only(top: kToolbarHeight, left: 7.0, right:10.0),
         child: Material(
           type: MaterialType.transparency,
           child: IconButton(
             splashColor: Colors.grey,
-            icon: CustomTheme.instance.menuIcon,
-            onPressed: menuClick,
+            icon: Icon(Icons.clear_all_rounded,size: 40,),color: Colors.red,
+            //CustomTheme.instance.menuIcon,
+            onPressed: widget.menuClick,
           ),
         ),
       ),
     );
   }
-
 }

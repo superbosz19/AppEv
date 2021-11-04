@@ -183,6 +183,7 @@ class MenuList extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    SizedBox(height: 20,),
                     Padding(
                       padding: const EdgeInsets.fromLTRB(40, 0, 0, 0),
                       child: Container(
@@ -217,13 +218,13 @@ class MenuList extends StatelessWidget {
                           //iconSize: 30,
                           onTap: (){  Get.toNamed("/profile-page"); },
                         ),
-                        Icon(Icons.eco_outlined,color: Colors.green,)
+                        //Icon(Icons.eco_outlined,color: Colors.green,)
                       ],
                     ),
                     SizedBox(height: 10,),
                     Row(
                       children: [
-                        Icon(Icons.payment_sharp,size: 34,),
+                        Icon(Icons.payment_rounded,size: 34,),
                         MenuListButton(
                           menuText: "Payment",
                            // icon: Icons.payment_sharp,

@@ -40,7 +40,11 @@ class SignupPage extends StatelessWidget {
           //       color: _theme.lightColor,
                 child: Padding(
                   padding:
-                  const EdgeInsets.only(left: 40, right: 40,top: 70),
+                  const EdgeInsets.only(
+                      left: 20,
+                      right: 20,
+                      top: 70
+                  ),
                   child: SingleChildScrollView(
                     scrollDirection: Axis.vertical,
 
@@ -58,9 +62,8 @@ class SignupPage extends StatelessWidget {
                           Center(
                             child: Container(
                               height: 100,
-
+                              width: double.infinity,
                               //color: Colors.greenAccent,
-
                                 child: Column(
                                   children: [
                                     Padding(
@@ -68,13 +71,13 @@ class SignupPage extends StatelessWidget {
                                       child: Text(
                                         "Sign up",
                                         //style: _theme.headerStyle,
-                                        style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+                                        style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
                                       ),
                                     ),
                                     Padding(
                                       padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
                                       child: Text(
-                                        "You can login by subscribing.",style: TextStyle(fontSize: 16),
+                                        "You can login by subscribing.",style: TextStyle(fontSize: 18),
                                       ),
                                     )
                                   ],
