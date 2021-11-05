@@ -31,7 +31,8 @@ class _MenuButtonState extends State<MenuButton> {
             splashColor: Colors.grey,
             icon: Icon(
               Icons.menu_rounded,
-              size: 44,color: Colors.pink,
+              size: 36,
+              //color: Colors.pink,
             ),
             //CustomTheme.instance.menuIcon,
             onPressed: widget.menuClick,

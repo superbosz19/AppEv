@@ -80,6 +80,8 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - images/Phithangreen_menu.png
+    - images/Phithan_Green_logo.png
     - images/Easy-Charge.png
     - images/marker.png
     - images/marker2.png
@@ -112,3 +114,9 @@ flutter:
     - family: PhithanGreen
       fonts:
         - asset: fonts/PhithanGreen.ttf
+    - family: PhithanGreen1
+      fonts:
+        - asset: fonts/Avenir Next.ttc
+    - family: PhithanGreen2
+      fonts:
+        - asset: fonts/SukhumvitSet.ttc
