@@ -80,6 +80,7 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
+    - images/BannerHelp.png
     - images/Phithangreen_menu.png
     - images/Phithan_Green_logo.png
     - images/Easy-Charge.png

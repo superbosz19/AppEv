@@ -335,7 +335,6 @@ class _MenuListState extends State<MenuList> {
                                   decoration: BoxDecoration(
                                     border: Border(
                                       top: BorderSide(
-                                        //                   <--- left side
                                         color: Colors.grey,
                                         width: 2.0,
                                       ),

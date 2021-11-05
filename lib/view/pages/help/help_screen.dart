@@ -1,5 +1,5 @@
-import 'package:ez_mobile/view/pages/help/problem1.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class HelpScreen extends StatefulWidget {
   const HelpScreen({key}) : super(key: key);
@@ -12,257 +12,260 @@ class _HelpScreenState extends State<HelpScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      /*appBar: AppBar(
-        title: Text(widget.title),
-      ),*/
-      body: Column(
-          children: [
-            //SizedBox(height: 80),
-            Row(
-              children: [
-                Container(
-                  //color: Colors.redAccent,
-                    padding: EdgeInsets.only(top: 80,bottom: 50,left: 30),
-                    //margin: EdgeInsets.symmetric(horizontal: 40.0),
-                    alignment: Alignment.topLeft,
-                    child:
-                    Text("Support",
-                      style: TextStyle(fontSize: 50,
-                          fontWeight: FontWeight.bold,
-                          //color: Colors.gre
-                        ),
-                    )
-                ),
-                Icon(Icons.eco,color: Colors.green,),
-              ],
-            ),
-            //SizedBox(height: 50),
-            Column(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context, MaterialPageRoute(
-                      builder: (context) {
-                        return Problem_1();
-                      },
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        // actions: [
+        //   Padding(
+        //     padding: const EdgeInsets.only(right: 20.0, top: 2.5),
+        //     child: IconButton(
+        //         onPressed: () => Get.back(),
+        //         icon: Icon(
+        //           Icons.menu_rounded,
+        //           color: Colors.black,
+        //           size: 36,
+        //         )),
+        //   )
+        //   // MenuButton(
+        //   //   alignment: Alignment.topLeft,
+        //   //   menuClick: () => Get.back(),
+        //   // )
+        // ],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12.0, top: 3.0),
+          child: Image.asset(
+            "images/Easy-Charge.png",
+            width: 160,
+            height: 160,
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            children: [
+              Image.asset(
+                "images/BannerHelp.png",
+                width: double.infinity,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  //color: Colors.white,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.white,
                     ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.only(left: 30),
-                    height: 70,
-                    width: double.infinity,
-                    decoration: BoxDecoration( //เส้นใน Container
-                      border:
-                      Border.all(color: Colors.black12),
-                    ),
-                    //color: Colors.teal,
-                    child:
-                    Row(
-                      children: [
-                        Text("Issue with a recent charger",
-                          style: TextStyle(
-                              fontSize: 20,
-                              color: Color(0xFF084418)
-                          ),
-                        ),
-                        SizedBox(width: 5,),
-                        Icon(Icons.eco_outlined ,color: Colors.green,),
-                        Spacer(),
-                        Icon(Icons.arrow_right_rounded, size: 50,
-                          color: Colors.teal,),
-                      ],
-                    ),
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context, MaterialPageRoute(
-                      builder: (context) {
-                        return Scaffold();
-                      },
-                    ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.only(left: 30),
-                    height: 70,
-                    width: double.infinity,
-                    /*decoration: BoxDecoration( //เส้นใน Container
-                        border:
-                        Border.all(color: Colors.black),
-                      ),*/
-                    //color: Colors.white,
-                    child:
-                    Row(
-                      children: [
-                        Text("Charger won't start",
-                            style: TextStyle(fontSize: 20,
-                                color: Color(0xFF084418))),
-                        SizedBox(width: 5,),
-                        Icon(Icons.eco_outlined ,color: Colors.green,),
-                        Spacer(),
-                        Icon(Icons.arrow_right_rounded, size: 50,
-                          color: Colors.teal,)
-                      ],
-                    )
-                    ,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context, MaterialPageRoute(
-                      builder: (context) {
-                        return Scaffold();
-                      },
-                    ),
-                    );
-                  },
-                  child: Container(
-                    padding: EdgeInsets.only(left: 30),
-                    height: 70,
-                    width: double.infinity,
-                    decoration: BoxDecoration( //เส้นใน Container
-                      border:
-                      Border.all(color: Colors.black12),
-                    ),
-                    //color: Colors.teal,
-                    child:
-                    Row(
-                      children: [
-                        Text("Damaged charger",
-                            style: TextStyle(
-                                fontSize: 20, color: Color(0xFF084418))),
-                        SizedBox(width: 5,),
-                        Icon(Icons.eco_outlined ,color: Colors.green,),
-                        Spacer(),
-                        Icon(Icons.arrow_right_rounded, size: 50,
-                          color: Colors.teal,)
-                      ],
-                    )
-                    ,
-                  ),
-                ),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.push(
-                      context, MaterialPageRoute(
-                      builder: (context) {
-                        return Scaffold();
-                      },
-                    ),
-                    );
-                  },
-                  // child: Container(
-                  //   padding: EdgeInsets.only(left: 30),
-                  //   height: 70,
-                  //   width: double.infinity,
-                    /*decoration: BoxDecoration( //เส้นใน Container
-                        border:
-                        Border.all(color: Colors.black),
-                      ),*/
-                    //color: Colors.white,
-                //     child:
-                //     Row(
-                //       children: [
-                //         Text("General problem",
-                //           style: TextStyle(
-                //               fontSize: 20, color: Color(0xFF084418)),
-                //         ),
-                //         SizedBox(width: 5,),
-                //         Icon(Icons.eco_outlined ,color: Colors.green,),
-                //         Spacer(),
-                //         Icon(Icons.arrow_right_rounded, size: 50,
-                //           color: Colors.teal,)
-                //       ],
-                //     )
-                //     ,
-                //   ),
-                // ),
-                // GestureDetector(
-                //   onTap: () {
-                //     Navigator.push(
-                //       context, MaterialPageRoute(
-                //       builder: (context) {
-                //         return Scaffold();
-                //       },
-                //     ),
-                //     );
-                //   },
-                  child: Container(
-                    padding: EdgeInsets.only(left: 30),
-                    height: 70,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        border: Border(bottom: BorderSide(
-                            color: Colors.black12
-                        ),)
-                      //เส้นใน Container
-                    //  border: Border.all(color: Colors.black12),
-                    ),
-                    //color: Colors.teal,
-                    child:
-                    Row(
-                      children: [
-                        Text("FAQs",
-                            style: TextStyle(
-                                fontSize: 20, color: Color(0xFF084418))),
-                        SizedBox(width: 5,),
-                        Icon(Icons.eco_outlined ,color: Colors.green,),
-                        Spacer(),
-                        Icon(Icons.arrow_right_rounded, size: 50,
-                          color: Colors.teal,)
-                      ],
-                    )
-                    ,
-                  ),
-                ),
-              //],
-            //),
-            SizedBox(height: 100),
-            Container(
-              //color: Colors.redAccent,
-              child: Center(
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    left: 60,
-                    //right: 50
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
                   ),
                   child: Row(
                     children: [
-                      Icon(Icons.help_center_rounded,color: Colors.black12, ),
-                      Container(
-                        child: Text("  More help please |",
-                          style: TextStyle(fontSize: 16),
+                      Padding(
+                        padding:
+                            const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
+                        child: Icon(
+                          Icons.charging_station_rounded,
+                          size: 40,
+                          color: Colors.green,
                         ),
-
                       ),
-                      TextButton(onPressed: () {
-                        Navigator.push(
-                          context, MaterialPageRoute(
-                          builder: (context) {
-                            return Scaffold();
-                          },
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Issue with a recent charger",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'SukhumvitSet'),
                         ),
-                        );
-                      },
-                          child: Text("Contact me.",
-                            style: TextStyle(
-                                decoration: TextDecoration.underline,
-                                fontSize: 16),),),
-                      Text("|",style: TextStyle(fontSize: 16),),
-                      SizedBox(width: 2,),
-                      //Icon(Icons.eco,color: Colors.green,),
+                      ),
                     ],
                   ),
                 ),
               ),
-            )
-          ]
-      ),],)
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  //color: Colors.white,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.white,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding:
+                        const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
+                        child: Icon(
+                          Icons.system_security_update_outlined,
+                          size: 40,
+                          color: Colors.green,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Charger isn't working",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'SukhumvitSet'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  //color: Colors.white,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.white,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding:
+                        const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
+                        child: Icon(
+                          Icons.charging_station_rounded,
+                          size: 40,
+                          color: Colors.green,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Damaged charger",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'SukhumvitSet'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Container(
+                  //color: Colors.white,
+                  width: 350,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    border: Border.all(
+                      color: Colors.white,
+                    ),
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.5),
+                        spreadRadius: 5,
+                        blurRadius: 7,
+                        offset: Offset(0, 3), // changes position of shadow
+                      ),
+                    ],
+                  ),
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding:
+                        const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
+                        child: Icon(
+                          Icons.chat_bubble_outline_outlined,
+                          size: 40,
+                          color: Colors.green,
+                        ),
+                      ),
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "FAQs",
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              fontFamily: 'SukhumvitSet'),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: Column(
+                  // crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        left: 100,),
+                      child: Row(
+                        children: [
+                          Text("POWERED BY",style: TextStyle(fontSize: 12),),
+                          Image.asset(
+                            "images/Phithan_Green_logo.png",
+                            height: 100,
+                            //width: 100,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          left: 130, right: 150, bottom: 30),
+                      child: Text(
+                        "( Ver. 0.8 )",
+                        style: TextStyle(color: Colors.grey),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+
+          ),
+        ),
+      ),
     );
   }
 }
