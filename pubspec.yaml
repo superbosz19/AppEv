@@ -86,6 +86,15 @@ flutter:
     - images/Easy-Charge.png
     - images/marker.png
     - images/marker2.png
+    - images/icon1.png
+    - images/icon2.png
+    - images/icon3.png
+    - images/icon4.png
+    - images/icon5.png
+    - images/icon6.png
+    - images/icon7.png
+    - images/icon8.png
+    - images/icon9.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

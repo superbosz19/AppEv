@@ -61,7 +61,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: Colors.grey.withOpacity(0.3),
                         spreadRadius: 5,
                         blurRadius: 7,
                         offset: Offset(0, 3), // changes position of shadow
@@ -73,21 +73,24 @@ class _HelpScreenState extends State<HelpScreen> {
                       Padding(
                         padding:
                             const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
-                        child: Icon(
-                          Icons.charging_station_rounded,
-                          size: 40,
-                          color: Colors.green,
+                        child: Image.asset(
+                          "images/icon5.png",
+                          height: 35,
+                          width: 35,
                         ),
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: Text(
-                          "Issue with a recent charger",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'SukhumvitSet'),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Issue with a recent charger",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                //fontWeight: FontWeight.bold,
+                                fontFamily: 'PhithanGreen1'),
+                          ),
                         ),
                       ),
                     ],
@@ -107,7 +110,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: Colors.grey.withOpacity(0.3),
                         spreadRadius: 5,
                         blurRadius: 7,
                         offset: Offset(0, 3), // changes position of shadow
@@ -119,21 +122,24 @@ class _HelpScreenState extends State<HelpScreen> {
                       Padding(
                         padding:
                         const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
-                        child: Icon(
-                          Icons.system_security_update_outlined,
-                          size: 40,
-                          color: Colors.green,
+                        child: Image.asset(
+                          "images/icon7.png",
+                          height: 35,
+                          width: 35,
                         ),
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: Text(
-                          "Charger isn't working",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'SukhumvitSet'),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Charger isn't working",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                //fontWeight: FontWeight.bold,
+                                fontFamily: 'PhithanGreen1'),
+                          ),
                         ),
                       ),
                     ],
@@ -153,7 +159,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: Colors.grey.withOpacity(0.3),
                         spreadRadius: 5,
                         blurRadius: 7,
                         offset: Offset(0, 3), // changes position of shadow
@@ -165,21 +171,24 @@ class _HelpScreenState extends State<HelpScreen> {
                       Padding(
                         padding:
                         const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
-                        child: Icon(
-                          Icons.charging_station_rounded,
-                          size: 40,
-                          color: Colors.green,
+                        child: Image.asset(
+                          "images/icon7.png",
+                          height: 35,
+                          width: 35,
                         ),
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: Text(
-                          "Damaged charger",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'SukhumvitSet'),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "Damaged charger",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                //fontWeight: FontWeight.bold,
+                                fontFamily: 'PhithanGreen1'),
+                          ),
                         ),
                       ),
                     ],
@@ -199,7 +208,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     borderRadius: BorderRadius.all(Radius.circular(8.0)),
                     boxShadow: [
                       BoxShadow(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: Colors.grey.withOpacity(0.3),
                         spreadRadius: 5,
                         blurRadius: 7,
                         offset: Offset(0, 3), // changes position of shadow
@@ -211,21 +220,24 @@ class _HelpScreenState extends State<HelpScreen> {
                       Padding(
                         padding:
                         const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
-                        child: Icon(
-                          Icons.chat_bubble_outline_outlined,
-                          size: 40,
-                          color: Colors.green,
+                        child: Image.asset(
+                          "images/icon9.png",
+                          height: 35,
+                          width: 35,
                         ),
                       ),
                       TextButton(
                         onPressed: () {},
-                        child: Text(
-                          "FAQs",
-                          style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              fontFamily: 'SukhumvitSet'),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Text(
+                            "FAQs",
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 18,
+                                //fontWeight: FontWeight.bold,
+                                fontFamily: 'PhithanGreen1'),
+                          ),
                         ),
                       ),
                     ],

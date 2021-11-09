@@ -148,9 +148,9 @@ class _MenuListState extends State<MenuList> {
             decoration: BoxDecoration(
                 //color: Color(0xFFE5E6E7),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(36),
-                  bottomRight: Radius.circular(36),
-                )),
+              bottomLeft: Radius.circular(36),
+              bottomRight: Radius.circular(36),
+            )),
             child: Padding(
               padding: const EdgeInsets.only(
                   top: 30,
@@ -171,11 +171,10 @@ class _MenuListState extends State<MenuList> {
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
+                            color: Colors.grey.withOpacity(0.3),
                             spreadRadius: 5,
                             blurRadius: 7,
-                            offset:
-                            Offset(0, 3), // changes position of shadow
+                            offset: Offset(0, 3), // changes position of shadow
                           ),
                         ],
                       ),
@@ -185,7 +184,8 @@ class _MenuListState extends State<MenuList> {
                             padding: const EdgeInsets.only(
                                 left: 10.0, top: 8, bottom: 8),
                             child: Icon(
-                              Icons.commute_outlined,color: Colors.green,
+                              Icons.commute_outlined,
+                              color: Colors.green,
                               size: 40,
                             ),
                           ),
@@ -225,11 +225,10 @@ class _MenuListState extends State<MenuList> {
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                         boxShadow: [
                           BoxShadow(
-                            color: Colors.grey.withOpacity(0.5),
+                            color: Colors.grey.withOpacity(0.3),
                             spreadRadius: 5,
                             blurRadius: 7,
-                            offset:
-                            Offset(0, 3), // changes position of shadow
+                            offset: Offset(0, 3), // changes position of shadow
                           ),
                         ],
                       ),
@@ -239,7 +238,8 @@ class _MenuListState extends State<MenuList> {
                             padding: const EdgeInsets.only(
                                 left: 10.0, top: 8, bottom: 8),
                             child: Icon(
-                              Icons.help_outline,color: Colors.green,
+                              Icons.help_outline,
+                              color: Colors.green,
                               size: 40,
                             ),
                           ),
@@ -374,7 +374,7 @@ class _MenuListState extends State<MenuList> {
                           borderRadius: BorderRadius.all(Radius.circular(8.0)),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
+                              color: Colors.grey.withOpacity(0.3),
                               spreadRadius: 5,
                               blurRadius: 7,
                               offset:
@@ -387,10 +387,10 @@ class _MenuListState extends State<MenuList> {
                             Padding(
                               padding: const EdgeInsets.only(
                                   left: 10.0, top: 8, bottom: 8),
-                              child: Icon(
-                                Icons.person_rounded,
-                                size: 40,
-                                color: Colors.green,
+                              child: Image.asset(
+                                "images/icon1.png",
+                                height: 35,
+                                width: 35,
                               ),
                             ),
                             MenuListButton(
@@ -421,7 +421,7 @@ class _MenuListState extends State<MenuList> {
                           borderRadius: BorderRadius.all(Radius.circular(8.0)),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
+                              color: Colors.grey.withOpacity(0.3),
                               spreadRadius: 5,
                               blurRadius: 7,
                               offset:
@@ -434,10 +434,10 @@ class _MenuListState extends State<MenuList> {
                               left: 10.0, top: 8, bottom: 8),
                           child: Row(
                             children: [
-                              Icon(
-                                Icons.payment_rounded,
-                                color: Colors.green,
-                                size: 40,
+                              Image.asset(
+                                "images/icon2.png",
+                                height: 35,
+                                width: 35,
                               ),
                               MenuListButton(
                                 menuText: "Payment",
@@ -478,7 +478,7 @@ class _MenuListState extends State<MenuList> {
                           borderRadius: BorderRadius.all(Radius.circular(8.0)),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
+                              color: Colors.grey.withOpacity(0.3),
                               spreadRadius: 5,
                               blurRadius: 7,
                               offset:
@@ -491,10 +491,10 @@ class _MenuListState extends State<MenuList> {
                             Padding(
                               padding: const EdgeInsets.only(
                                   left: 10.0, top: 8.0, bottom: 8),
-                              child: Icon(
-                                Icons.star_border_outlined,
-                                color: Colors.green,
-                                size: 40,
+                              child: Image.asset(
+                                "images/icon3.png",
+                                height: 35,
+                                width: 35,
                               ),
                             ),
                             MenuListButton(
@@ -526,7 +526,7 @@ class _MenuListState extends State<MenuList> {
                           borderRadius: BorderRadius.all(Radius.circular(8.0)),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
+                              color: Colors.grey.withOpacity(0.3),
                               spreadRadius: 5,
                               blurRadius: 7,
                               offset:
@@ -539,10 +539,10 @@ class _MenuListState extends State<MenuList> {
                             Padding(
                               padding: const EdgeInsets.only(
                                   left: 10.0, top: 8, bottom: 8),
-                              child: Icon(
-                                Icons.access_time_rounded,
-                                color: Colors.green,
-                                size: 40,
+                              child: Image.asset(
+                                "images/icon5.png",
+                                height: 35,
+                                width: 35,
                               ),
                             ),
                             MenuListButton(
@@ -574,7 +574,7 @@ class _MenuListState extends State<MenuList> {
                           borderRadius: BorderRadius.all(Radius.circular(8.0)),
                           boxShadow: [
                             BoxShadow(
-                              color: Colors.grey.withOpacity(0.5),
+                              color: Colors.grey.withOpacity(0.3),
                               spreadRadius: 5,
                               blurRadius: 7,
                               offset:
@@ -587,10 +587,10 @@ class _MenuListState extends State<MenuList> {
                             Padding(
                               padding: const EdgeInsets.only(
                                   left: 10.0, top: 8, bottom: 8),
-                              child: Icon(
-                                Icons.chat_bubble_rounded,
-                                color: Colors.green,
-                                size: 34,
+                              child: Image.asset(
+                                "images/icon8.png",
+                                height: 35,
+                                width: 35,
                               ),
                             ),
                             MenuListButton(
@@ -614,11 +614,17 @@ class _MenuListState extends State<MenuList> {
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 120, right: 120, top: 16),
-                          child: MenuListButton(
-                            menuText: "Log Out",
+                          child: TextButton(
+                            child: Text(
+                              "- Log Out -",
+                              style: TextStyle(
+                                  color: Colors.green[800],
+                                  fontSize: 20,
+                                  fontFamily: 'PhithanGreen1'),
+                            ),
                             // icon: Icons.logout,
                             // iconSize: 30,
-                            onTap: () {
+                            onPressed: () {
                               //Get.toNamed("/help-page");
                               Get.defaultDialog(
                                 title: "Do you want to Sign Out ? ",
@@ -648,10 +654,14 @@ class _MenuListState extends State<MenuList> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                                left: 100,),
+                              left: 100,
+                            ),
                             child: Row(
                               children: [
-                                Text("POWERED BY",style: TextStyle(fontSize: 12),),
+                                Text(
+                                  "POWERED BY",
+                                  style: TextStyle(fontSize: 12),
+                                ),
                                 Image.asset(
                                   "images/Phithan_Green_logo.png",
                                   height: 100,
