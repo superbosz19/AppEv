@@ -34,7 +34,7 @@ class ScanButton extends StatelessWidget {
                 child: ElevatedButton(
                   style: _theme.scanButtonStyle,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 60),
+                    padding: const EdgeInsets.only(left: 40),
                     child: Row(
                       children: [
                         Icon(Icons.crop_free_outlined),
@@ -72,7 +72,7 @@ class ScanButton extends StatelessWidget {
                 child: ElevatedButton(
                   style: _theme.scanButtonStyle,
                   child: Padding(
-                    padding: const EdgeInsets.only(left: 60),
+                    padding: const EdgeInsets.only(left: 40),
                     child: Row(
                       children: [
                         Icon(Icons.crop_free_outlined),

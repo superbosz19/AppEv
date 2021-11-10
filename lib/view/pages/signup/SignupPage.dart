@@ -65,9 +65,10 @@ class SignupPage extends StatelessWidget {
                               width: double.infinity,
                               //color: Colors.greenAccent,
                                 child: Column(
+
                                   children: [
                                     Padding(
-                                      padding: const EdgeInsets.fromLTRB(0, 0, 220, 0),
+                                      padding: const EdgeInsets.fromLTRB(0, 0, 20, 0),
                                       child: Text(
                                         "Sign up",
                                         //style: _theme.headerStyle,
@@ -101,7 +102,7 @@ class SignupPage extends StatelessWidget {
                           EZTextFormField(
                             label: "Phone Number",
                             labelStyle: _theme.textLabelStyle,
-                            hint: "+6699999999",
+                            hint: "0xxxxxxxxx",
                             onChange: ctrl.phoneChanged,
 
                           ),
@@ -248,7 +249,7 @@ class EZPasswordFormField extends StatelessWidget {
                 EdgeInsets.symmetric(horizontal: 30, vertical: 20),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide(color: Colors.greenAccent),
+                  borderSide: BorderSide(color: Colors.greenAccent.shade200),
                   gapPadding: 10,
                 ),
 
@@ -256,22 +257,22 @@ class EZPasswordFormField extends StatelessWidget {
                  hintText: hint,
               ),
             ),
-            Positioned(
-              top: 2,
-              right: 10,
-              child: IconButton(
-                icon: Icon(
-                  Icons.vpn_key,
-                  //_obscureText ? Icons.visibility : Icons.visibility_off,
-                ), onPressed: () {  },
-
-                // onPressed: () {
-                //   setState(() {
-                //     _obscureText = !_obscureText;
-                //   });
-                // }),
-              ),
-            ),
+            // Positioned(
+            //   top: 2,
+            //   right: 10,
+            //   child: IconButton(
+            //     icon: Icon(
+            //       Icons.vpn_key,
+            //       //_obscureText ? Icons.visibility : Icons.visibility_off,
+            //     ), onPressed: () {  },
+            //
+            //     // onPressed: () {
+            //     //   setState(() {
+            //     //     _obscureText = !_obscureText;
+            //     //   });
+            //     // }),
+            //   ),
+            // ),
           ],
         )
       ],
@@ -294,7 +295,7 @@ class EZTextFormField extends StatelessWidget {
         this.label,
         this.hint,
         this.labelStyle,
-        this.spaceH: 10,
+        this.spaceH: 5,
         this.onChange,
         this.readOnly:false,
         this.initialValue:"",
@@ -319,7 +320,7 @@ class EZTextFormField extends StatelessWidget {
             floatingLabelBehavior: FloatingLabelBehavior.always,
             suffixIcon: Padding(
               padding: const EdgeInsets.fromLTRB(0, 20, 20, 20),
-              child: Icon(Icons.email),
+              // child: Icon(Icons.email),
             ),
             contentPadding:
             EdgeInsets.symmetric(horizontal: 30, vertical: 20),
@@ -359,7 +360,7 @@ class EZSearchFormField extends StatelessWidget {
         this.label,
         this.hint,
         this.labelStyle,
-        this.spaceH: 10,
+        this.spaceH: 5,
         this.onChange,
         this.icon})
       : super(key: key);

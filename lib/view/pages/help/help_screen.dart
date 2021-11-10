@@ -75,8 +75,8 @@ class _HelpScreenState extends State<HelpScreen> {
                             const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
                         child: Image.asset(
                           "images/icon5.png",
-                          height: 35,
-                          width: 35,
+                          height: 40,
+                          width: 30,
                         ),
                       ),
                       TextButton(
@@ -124,8 +124,8 @@ class _HelpScreenState extends State<HelpScreen> {
                         const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
                         child: Image.asset(
                           "images/icon7.png",
-                          height: 35,
-                          width: 35,
+                          height: 40,
+                          width: 30,
                         ),
                       ),
                       TextButton(
@@ -173,8 +173,8 @@ class _HelpScreenState extends State<HelpScreen> {
                         const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
                         child: Image.asset(
                           "images/icon7.png",
-                          height: 35,
-                          width: 35,
+                          height: 40,
+                          width: 30,
                         ),
                       ),
                       TextButton(
@@ -222,8 +222,8 @@ class _HelpScreenState extends State<HelpScreen> {
                         const EdgeInsets.only(left: 10.0, top: 8, bottom: 8),
                         child: Image.asset(
                           "images/icon9.png",
-                          height: 35,
-                          width: 35,
+                          height: 40,
+                          width: 30,
                         ),
                       ),
                       TextButton(

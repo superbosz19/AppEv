@@ -61,6 +61,12 @@ dependencies:
   form_field_validator: ^1.1.0
 
 dev_dependencies:
+  flutter_launcher_icons: ^0.9.2
+
+flutter_icons:
+  image_path: "images/Easy-Charge.png"
+  android: true
+  ios: true
   flutter_test:
     sdk: flutter
 
@@ -95,6 +101,8 @@ flutter:
     - images/icon7.png
     - images/icon8.png
     - images/icon9.png
+    - images/BannerPayment.png
+    - images/icon_payment.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 

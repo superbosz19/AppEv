@@ -101,7 +101,7 @@ class _MenuListButtonState extends State<MenuListButton> {
           children: [
             Icon(
               widget.icon,
-              size: widget.iconSize,
+              //size: widget.iconSize,
             ),
             SizedBox(
               width: widget.spaceW,
@@ -109,9 +109,10 @@ class _MenuListButtonState extends State<MenuListButton> {
             Text(
               widget.menuText,
               style: TextStyle(
-                fontSize: widget.fontSize,
-                //fontWeight: FontWeight.bold,
-                fontFamily: 'PhithanGreen1',
+                fontSize: 17,
+                //widget.fontSize,
+                fontWeight: FontWeight.w400,
+                //fontFamily: 'PhithanGreen1',
                 //color: widget._theme.primaryColor,
               ),
             ),
@@ -263,13 +264,13 @@ class _MenuListState extends State<MenuList> {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(
-                          left: 80,
+                          left: 70,
                         ),
                         child: Text("Don't have an account?  "),
                       ),
                       TextButton(
                         onPressed: () {
-                          Get.toNamed("/help-page");
+                          Get.toNamed("/signup");
                         },
                         child: Text(
                           "Sign up",
@@ -386,11 +387,11 @@ class _MenuListState extends State<MenuList> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 10.0, top: 8, bottom: 8),
+                                  left: 20.0, top: 8, bottom: 8),
                               child: Image.asset(
                                 "images/icon1.png",
-                                height: 35,
-                                width: 35,
+                                height: 40,
+                                width: 25,
                               ),
                             ),
                             MenuListButton(
@@ -431,13 +432,13 @@ class _MenuListState extends State<MenuList> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.only(
-                              left: 10.0, top: 8, bottom: 8),
+                              left: 20.0, top: 8, bottom: 8),
                           child: Row(
                             children: [
                               Image.asset(
                                 "images/icon2.png",
-                                height: 35,
-                                width: 35,
+                                height: 40,
+                                width: 25,
                               ),
                               MenuListButton(
                                 menuText: "Payment",
@@ -490,11 +491,11 @@ class _MenuListState extends State<MenuList> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 10.0, top: 8.0, bottom: 8),
+                                  left: 20.0, top: 8.0, bottom: 8),
                               child: Image.asset(
                                 "images/icon3.png",
-                                height: 35,
-                                width: 35,
+                                height: 40,
+                                width: 25,
                               ),
                             ),
                             MenuListButton(
@@ -538,11 +539,11 @@ class _MenuListState extends State<MenuList> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 10.0, top: 8, bottom: 8),
+                                  left: 20.0, top: 8, bottom: 8),
                               child: Image.asset(
                                 "images/icon5.png",
-                                height: 35,
-                                width: 35,
+                                height: 40,
+                                width: 25,
                               ),
                             ),
                             MenuListButton(
@@ -586,11 +587,11 @@ class _MenuListState extends State<MenuList> {
                           children: [
                             Padding(
                               padding: const EdgeInsets.only(
-                                  left: 10.0, top: 8, bottom: 8),
+                                  left: 20.0, top: 8, bottom: 8),
                               child: Image.asset(
                                 "images/icon8.png",
-                                height: 35,
-                                width: 35,
+                                height: 40,
+                                width: 25,
                               ),
                             ),
                             MenuListButton(
@@ -613,14 +614,15 @@ class _MenuListState extends State<MenuList> {
                       children: [
                         Padding(
                           padding: const EdgeInsets.only(
-                              left: 120, right: 120, top: 16),
+                              left: 150, right: 125, top: 16),
                           child: TextButton(
                             child: Text(
-                              "- Log Out -",
+                              "Log out",
                               style: TextStyle(
                                   color: Colors.green[800],
                                   fontSize: 20,
-                                  fontFamily: 'PhithanGreen1'),
+                                  //rfontFamily: 'PhithanGreen1'
+                              ),
                             ),
                             // icon: Icons.logout,
                             // iconSize: 30,
@@ -654,7 +656,7 @@ class _MenuListState extends State<MenuList> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                              left: 100,
+                              left: 95,
                             ),
                             child: Row(
                               children: [

@@ -26,6 +26,34 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0, top: 2.5),
+            child: IconButton(
+                onPressed: () => Get.back(),
+                icon: Icon(
+                  Icons.menu_rounded,
+                  color: Colors.black,
+                  size: 36,
+                )),
+          )
+          // MenuButton(
+          //   alignment: Alignment.topLeft,
+          //   menuClick: () => Get.back(),
+          // )
+        ],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12.0, top: 3.0),
+          child: Image.asset(
+            "images/Easy-Charge.png",
+            width: 160,
+            height: 160,
+          ),
+        ),
+      ),
       body: Material(
         child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
@@ -54,7 +82,9 @@ class ProfilePage extends StatelessWidget {
                         ? Align(
                             alignment: Alignment.center,
                             child: Padding(
-                              padding: const EdgeInsets.only(top: 100.0),
+                              padding: const EdgeInsets.only(
+                                  //top: 100.0
+                              ),
                               child: CircularProgressIndicator(
                                 color: _theme.primaryColor,
                               ),

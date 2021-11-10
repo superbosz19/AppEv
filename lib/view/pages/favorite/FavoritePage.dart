@@ -16,7 +16,34 @@ class FavoritePage extends StatelessWidget{
     CustomTheme _theme = CustomTheme.instance;
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      appBar: AppBar(backgroundColor: k2rrorColor,),
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0, top: 2.5),
+            child: IconButton(
+                onPressed: () => Get.back(),
+                icon: Icon(
+                  Icons.menu_rounded,
+                  color: Colors.black,
+                  size: 36,
+                )),
+          )
+          // MenuButton(
+          //   alignment: Alignment.topLeft,
+          //   menuClick: () => Get.back(),
+          // )
+        ],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12.0, top: 3.0),
+          child: Image.asset(
+            "images/Easy-Charge.png",
+            width: 160,
+            height: 160,
+          ),
+        ),
+      ),
       body: Material(
         child: Container(
           width: double.infinity,

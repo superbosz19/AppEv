@@ -14,9 +14,37 @@ class ChargeHistoryPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenHeight = MediaQuery.of(context).size.height;
 
-    return SingleChildScrollView(
-      scrollDirection: Axis.vertical,
-      child: Material(
+    return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0, top: 2.5),
+            child: IconButton(
+                onPressed: () => Get.back(),
+                icon: Icon(
+                  Icons.menu_rounded,
+                  color: Colors.black,
+                  size: 36,
+                )),
+          )
+          // MenuButton(
+          //   alignment: Alignment.topLeft,
+          //   menuClick: () => Get.back(),
+          // )
+        ],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12.0, top: 3.0),
+          child: Image.asset(
+            "images/Easy-Charge.png",
+            width: 160,
+            height: 160,
+          ),
+        ),
+      ),
+      body:SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Container(
           width: double.infinity,
           child: Padding(
@@ -27,13 +55,15 @@ class ChargeHistoryPage extends StatelessWidget {
               builder: (ctrl) {
                 return Stack(
                     children: [
-                       EZBackButton(),
+                       //rEZBackButton(),
                       (ctrl.loadDone) ? Padding(
-                        padding: EdgeInsets.only(top: kToolbarHeight),
+                        padding: EdgeInsets.only(
+                           // top: kToolbarHeight
+                        ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(height: 30),
+                            //SizedBox(height: 30),
                             Text(
                               "Charge History",
                               style: TextStyle(

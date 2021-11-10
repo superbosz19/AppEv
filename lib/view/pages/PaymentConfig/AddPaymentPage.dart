@@ -14,6 +14,7 @@ import 'package:flutter_multi_formatter/flutter_multi_formatter.dart';
 
 class AddPaymentPage extends StatelessWidget {
   CustomTheme _theme = CustomTheme.instance;
+
   // PaymentConfigController paymentCtrl = Get.find<PaymentConfigController>();
 
   @override
@@ -35,19 +36,56 @@ class AddPaymentPage extends StatelessWidget {
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      appBar: AppBar(backgroundColor: k2rrorColor,),
-      body: Material(
-        child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
-            child: Container(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0, top: 2.5),
+            child: IconButton(
+                onPressed: () => Get.back(),
+                icon: Icon(
+                  Icons.menu_rounded,
+                  color: Colors.black,
+                  size: 36,
+                )),
+          )
+          // MenuButton(
+          //   alignment: Alignment.topLeft,
+          //   menuClick: () => Get.back(),
+          // )
+        ],
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12.0, top: 3.0),
+          child: Image.asset(
+            "images/Easy-Charge.png",
+            width: 160,
+            height: 140,
+          ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              child: Image.asset(
+                "images/BannerPayment.png",
+                width: double.infinity,
+                //height: 100,
+              ),
+            ),
+            Container(
               width: double.infinity,
               //height: double.infinity,
               // margin:  EdgeInsets.only(top: kToolbarHeight),
               child: Padding(
                 padding: EdgeInsets.only(
-                   // top: kToolbarHeight,
-                    left: _paddLR,
-                    right: _paddLR),
+                  // top: kToolbarHeight,
+                  // left: _paddLR,
+                  //right: _paddLR
+                  left: 20,
+                  right: 20,
+                ),
                 child: GetX<PaymentConfigController>(
                   init: Get.find<PaymentConfigController>(),
                   initState: (_) {},
@@ -69,22 +107,26 @@ class AddPaymentPage extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              height: 20,
-                                //height: kToolbarHeight
-                            ),
-                            Text(
-                              "Add Card",
-                              style: TextStyle(
-                                color: _theme.secondaryColor,
-                                fontWeight: FontWeight.w900,
-                                fontSize: _fontTitleSize,
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                               // height: _sectionH
-                            ),
+                            // SizedBox(
+                            //   height: 20,
+                            //   //height: kToolbarHeight
+                            // ),
+
+                            // Text(
+                            //   "Add Card",
+                            //   style: TextStyle(
+                            //     color: _theme.secondaryColor,
+                            //     fontWeight: FontWeight.w900,
+                            //     fontSize: _fontTitleSize,
+                            //   ),
+                            // ),
+                            // SizedBox(
+                            //   height: 20,
+                            //   // height: _sectionH
+                            // ),
+                            Text("Card number",style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green),),
                             EZTextFormField(
                               label: "Card No",
                               initialValue: "",
@@ -96,43 +138,55 @@ class AddPaymentPage extends StatelessWidget {
                               ],
                             ),
                             SizedBox(
-                              height: 5,
-                                //height: _sectionH
+                              height: 7,
+                              //height: _sectionH
+                            ),
+                            Text(
+                              "Expiryholder Name",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.green),
                             ),
                             EZTextFormField(
                               label: "Expiration",
                               initialValue: "",
                               labelStyle: _lableStyle,
-                              hint: "09/99",
+                              hint: "xx / xx",
                               onChange: paymentCtrl.cardExpChanged,
                               formatters: [CreditCardExpirationDateFormatter()],
                             ),
                             SizedBox(
-                              height: 5,
-                                //height: _sectionH
+                              height: 7,
+                              //height: _sectionH
                             ),
+                            Text("CVV",style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green),),
                             EZTextFormField(
                               label: "CVV",
                               initialValue: "",
                               labelStyle: _lableStyle,
-                              hint: "999",
+                              hint: "xxx",
                               onChange: paymentCtrl.cardCVVChanged,
                               formatters: [CreditCardCvcInputFormatter()],
                             ),
                             SizedBox(
-                              height: 5,
-                                //height: _sectionH
+                              height: 7,
+                              //height: _sectionH
                             ),
+                            Text("Card Holder Name",style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.green),),
                             EZTextFormField(
                               label: "Card Holder Name",
                               initialValue: "",
                               labelStyle: _lableStyle,
-                              hint: "Name LastName",
+                              hint: "Name - LastName",
                               onChange: paymentCtrl.cardHolderChanged,
                             ),
-                            SizedBox(
-                              height: 10,
-                            ),
+                            // SizedBox(
+                            //   height: 2,
+                            // ),
                             TextLabel(
                               label: Text(
                                 "Primary Card",
@@ -144,7 +198,7 @@ class AddPaymentPage extends StatelessWidget {
                                 onChanged: paymentCtrl.primaryChanged,
                               ),
                             ),
-                            SizedBox(height: _sectionH),
+                            //SizedBox(height: _sectionH),
                             Container(
                               width: _screenW,
                               child: ElevatedButton(
@@ -162,40 +216,55 @@ class AddPaymentPage extends StatelessWidget {
                                     color: _theme.lightColor,
                                   ),
                                 ),
-                                onPressed:paymentCtrl.isValidInput()?() async {
-                                  CardInfo cardInfo = CardInfo(
-                                    cardHolder: paymentCtrl.cardHolder.value,
-                                    cardNo: paymentCtrl.cardNo.value,
-                                    cvv: paymentCtrl.cardCVV.value,
-                                    expiryDate: paymentCtrl.cardExp.value,
-                                    primary:  paymentCtrl.primary.value,
-                                  );
+                                onPressed: paymentCtrl.isValidInput()
+                                    ? () async {
+                                        CardInfo cardInfo = CardInfo(
+                                          cardHolder:
+                                              paymentCtrl.cardHolder.value,
+                                          cardNo: paymentCtrl.cardNo.value,
+                                          cvv: paymentCtrl.cardCVV.value,
+                                          expiryDate: paymentCtrl.cardExp.value,
+                                          primary: paymentCtrl.primary.value,
+                                        );
 
-                                  if (cardInfo.cardNo.split(" ").length < 4){
-                                    Get.snackbar("Error", "Invalid card ",
-                                        colorText: _theme.lightColor, snackPosition: SnackPosition.TOP,
-                                        backgroundColor:_theme.secondaryColor
-                                    );
-                                    return;
-                                  }
-                                  bool cardExists = await FirebaseService.instance.isCreditCardExist(cardInfo, Get.find<AuthController>().chargerUser.userID);
-                                  print("cardExists=> ${cardExists}");
-                                  if (cardExists){
-                                    Get.snackbar("Error", "Card Already exists",
-                                      colorText: _theme.lightColor, snackPosition: SnackPosition.TOP,
-                                      backgroundColor:_theme.secondaryColor
-                                    );
-
-                                  }else{
-                                    FirebaseService.instance
-                                        .addCreditCard(cardInfo, Get.find<AuthController>().chargerUser.userID);
-                                    print("after addded");
-                                    paymentCtrl.primary.value =false;
-                                    Get.back();
-                                  }
-                                  //Get.back();
-
-                                }:null,
+                                        if (cardInfo.cardNo.split(" ").length <
+                                            4) {
+                                          Get.snackbar("Error", "Invalid card ",
+                                              colorText: _theme.lightColor,
+                                              snackPosition: SnackPosition.TOP,
+                                              backgroundColor:
+                                                  _theme.secondaryColor);
+                                          return;
+                                        }
+                                        bool cardExists = await FirebaseService
+                                            .instance
+                                            .isCreditCardExist(
+                                                cardInfo,
+                                                Get.find<AuthController>()
+                                                    .chargerUser
+                                                    .userID);
+                                        print("cardExists=> ${cardExists}");
+                                        if (cardExists) {
+                                          Get.snackbar(
+                                              "Error", "Card Already exists",
+                                              colorText: _theme.lightColor,
+                                              snackPosition: SnackPosition.TOP,
+                                              backgroundColor:
+                                                  _theme.secondaryColor);
+                                        } else {
+                                          FirebaseService.instance
+                                              .addCreditCard(
+                                                  cardInfo,
+                                                  Get.find<AuthController>()
+                                                      .chargerUser
+                                                      .userID);
+                                          print("after addded");
+                                          paymentCtrl.primary.value = false;
+                                          Get.back();
+                                        }
+                                        //Get.back();
+                                      }
+                                    : null,
                               ),
                             )
                           ],
@@ -205,7 +274,10 @@ class AddPaymentPage extends StatelessWidget {
                   },
                 ),
               ),
-            )),
+            )
+          ],
+          // scrollDirection: Axis.vertical,
+        ),
       ),
     );
   }
