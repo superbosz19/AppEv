@@ -6,201 +6,238 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class LoginPage extends StatelessWidget{
-
+class LoginPage extends StatelessWidget {
   CustomTheme _theme = CustomTheme.instance;
 
   LoginController ctrl = LoginController();
 
   @override
   Widget build(BuildContext context) {
-    double _screenW = MediaQuery
-        .of(context)
-        .size
-        .width;
+    double _screenW = MediaQuery.of(context).size.width;
     return Scaffold(
-      resizeToAvoidBottomInset: true,
-      body: Material(
-        color: _theme.lightColor,
-        child: Padding(
-          padding:
-          const EdgeInsets.only(top: kToolbarHeight, left: 10, right: 10),
-          child: SingleChildScrollView(
-            scrollDirection: Axis.vertical,
+        resizeToAvoidBottomInset: true,
+        body: SingleChildScrollView(
+          child: Material(
             child: Container(
-              width: _screenW,
-              // height: double.infinity,
-              color: _theme.lightColor,
-              child: Stack(
+              color: Colors.white,
+              child: Column(
+                //color: _theme.lightColor,
                 children: [
-                  ctrl.isShowLoading?LoadingDialog(top:kToolbarHeight * 4):SizedBox.shrink(),
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                     // CloseButton(),
-                      Center(
-                        child: Padding(
-                          padding: const EdgeInsets.only(top:30),
-                          child: Text(
-                            "Welcome Back !",
-                            style: Theme.of(context)
-                                .textTheme
-                                .headline6
-                                .copyWith(fontWeight: FontWeight.bold, fontSize: 30),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Center(
-                        child: Padding(
-                          padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                          child: Text(
-                            "Sign in with your email and password  \nor continue with social media.",
-                            textAlign: TextAlign.center,style: TextStyle(fontSize: 16),
-                          ),
-                        ),
-                      ),
-                      SizedBox(height: 20,),
-
-                      EZTextFormField(
-                        label: "Email",
-                        labelStyle: _theme.textLabelStyle,
-                        hint: "Enter your email",
-                        onChange: ctrl.emailChanged,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      EZPasswordFormField(
-                        label: "Password",
-                        labelStyle: _theme.textLabelStyle,
-                        hint: "Enter your password",
-                        onChange: ctrl.pwd1Changed,
-                      ),
-
-                      // SizedBox(
-                      //   height: 10,
-                      // ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        children: [
-                          // Checkbox(
-                          //   value: false,
-                          //   onChanged: (value) {},
-                          // ),
-                          // Text("Remember me"),
-                           Spacer(),
-                          TextButton(
-                            onPressed: () {},
-                            child: Text(
-                              "Forget Password",
-                              style: TextStyle(decoration: TextDecoration.underline),
-                            ),
-                          ),
-                          SizedBox(
-                              width: 10
-                          ),
-                        ],
-                      ),
-                      Align(
-                        alignment: Alignment.bottomCenter,
-                        child: Padding(
-                          padding: const EdgeInsets.all(20.0),
-                          child: SizedBox(
-                            width: double.infinity,
-                            child:MaterialButton(
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.all(Radius.circular(40))),
-                                color: k1rrorColor,
-                              padding:EdgeInsets.all(15),
-                            // ElevatedButton(
-                            //
-                            //   style: ElevatedButton.styleFrom(
-                            //     primary: _theme.primaryColor,
-                            //     textStyle: TextStyle(
-                            //       color: _theme.lightColor,
-                            //     ),
-                            //   ),
-                              child: Text(
-                                "Log in",
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  //fontWeight: FontWeight.w900,
-                                  color: _theme.lightColor,
+                  Image.asset(
+                    "images/BannerLogin.png",
+                    // width: 160,
+                    // height: 160,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(
+                        // top: kToolbarHeight,
+                        left: 25,
+                        right: 25),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
+                      child: Container(
+                        width: _screenW,
+                        // height: double.infinity,
+                        color: _theme.lightColor,
+                        child: Stack(
+                          children: [
+                            ctrl.isShowLoading
+                                ? LoadingDialog(top: kToolbarHeight * 4)
+                                : SizedBox.shrink(),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                // CloseButton(),
+                                Center(
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(top: 10),
+                                    child: Text(
+                                      "Welcome to EasyCharge",
+                                      style: Theme.of(context)
+                                          .textTheme
+                                          .headline6
+                                          .copyWith(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 24),
+                                    ),
+                                  ),
                                 ),
-                              ),
-                              onPressed: () {
-                                if (ctrl.isValidInput()){
-                                    ctrl.showLoading = true;
-                                    ctrl.doLogin();
-                                    ctrl.showLoading = false;
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                // Center(
+                                //   child: Padding(
+                                //     padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                //     child: Text(
+                                //       "Sign in with your email and password  \nor continue with social media.",
+                                //       textAlign: TextAlign.center,style: TextStyle(fontSize: 16),
+                                //     ),
+                                //   ),
+                                // ),
+                                // SizedBox(height: 20,),
+                                // Container(child: Row(children: [
+                                //   Column(children: [
+                                //     SizedBox(width: 5,),
+                                //     EZTextFormField(
+                                //       label: "Email",
+                                //       labelStyle: _theme.textLabelStyle,
+                                //       hint: "Enter your Email address",
+                                //       onChange: ctrl.emailChanged,
+                                //     ),
+                                //     SizedBox(width: 5,),
+                                //   ],)
+                                // ],),),
 
-                                }else{
-                                  ctrl.showLoading =false;
-                                  Get.snackbar("Error",
-                                      ctrl.errMSG,
-                                      snackPosition:  SnackPosition.TOP,
-                                      snackStyle: SnackStyle.FLOATING,
-                                      colorText: Colors.red,
-                                      isDismissible: true,
+                                EZTextFormField(
+                                  label: "Email",
+                                  labelStyle: _theme.textLabelStyle,
+                                  hint: "Enter your Email address",
+                                  onChange: ctrl.emailChanged,
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
+                                EZPasswordFormField(
+                                  label: "Password",
+                                  labelStyle: _theme.textLabelStyle,
+                                  hint: "Enter your password",
+                                  onChange: ctrl.pwd1Changed,
+                                ),
 
-                                  );
-                                }
-                              },
+                                // SizedBox(
+                                //   height: 10,
+                                // ),
+
+                                Row(
+                                  children: [
+                                    // Checkbox(
+                                    //   value: false,
+                                    //   onChanged: (value) {},
+                                    // ),
+                                    // Text("Remember me"),
+                                    //Spacer(),
+                                    SizedBox(
+                                      width: 20,
+                                    ),
+                                    TextButton(
+                                      onPressed: () {},
+                                      child: Text(
+                                        "Forget Password ?",
+                                        style: TextStyle(color: Colors.grey
+                                            //decoration: TextDecoration.underline
+                                            ),
+                                      ),
+                                    ),
+                                    // SizedBox(
+                                    //     width: 10
+                                    // ),
+                                  ],
+                                ),
+                                Align(
+                                  alignment: Alignment.bottomCenter,
+                                  child: Padding(
+                                    padding: const EdgeInsets.only(
+                                        left: 5, right: 5),
+                                    child: SizedBox(
+                                      width: 350,
+                                      child: MaterialButton(
+                                        shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(40))),
+                                        color: k1rrorColor,
+                                        padding: EdgeInsets.all(10),
+                                        // ElevatedButton(
+                                        //
+                                        //   style: ElevatedButton.styleFrom(
+                                        //     primary: _theme.primaryColor,
+                                        //     textStyle: TextStyle(
+                                        //       color: _theme.lightColor,
+                                        //     ),
+                                        //   ),
+                                        child: Text(
+                                          "Log in",
+                                          style: TextStyle(
+                                            fontSize: 16,
+                                            //fontWeight: FontWeight.w900,
+                                            color: _theme.lightColor,
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          if (ctrl.isValidInput()) {
+                                            ctrl.showLoading = true;
+                                            ctrl.doLogin();
+                                            ctrl.showLoading = false;
+                                          } else {
+                                            ctrl.showLoading = false;
+                                            Get.snackbar(
+                                              "Error",
+                                              ctrl.errMSG,
+                                              snackPosition: SnackPosition.TOP,
+                                              snackStyle: SnackStyle.FLOATING,
+                                              colorText: Colors.red,
+                                              isDismissible: true,
+                                            );
+                                          }
+                                        },
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                //SizedBox(height: 20),
+                                Center(
+                                  child: Material(
+                                    child: InkWell(
+                                      child: Padding(
+                                        padding: const EdgeInsets.fromLTRB(
+                                            90, 5, 20, 0),
+                                        child: Row(
+                                          children: [
+                                            Text("Don't have an account?"),
+                                            SizedBox(
+                                              width: 5.0,
+                                            ),
+                                            Text(
+                                              "Sign up",
+                                              style: TextStyle(
+                                                  fontSize: 16,
+                                                  color: _theme.secondaryColor,
+                                                  fontWeight: FontWeight.bold
+                                                  // decoration: TextDecoration.underline
+                                                  ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      onTap: () => Get.toNamed("/signup"),
+                                    ),
+                                  ),
+                                )
+                              ],
                             ),
-                          ),
+                          ],
                         ),
                       ),
-                      SizedBox(height: 20),
-                      Center(
-                        child: Material(
-                          child: InkWell(
-                            child: Padding(
-                              padding: const EdgeInsets.fromLTRB(90, 10, 20, 0),
-                              child: Row(
-
-                                children: [
-                                  Text("Don't have an account?"),
-                                  SizedBox(width: 5.0,),
-                                  Text("Sign up", style: TextStyle(
-                                    fontSize: 16,
-                                    color :_theme.secondaryColor,
-                                    decoration: TextDecoration.underline
-                                  ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            onTap: ()=> Get.toNamed("/signup"),
-                          ),
-                        ),
-                      )
-                    ],
+                    ),
                   ),
                 ],
               ),
             ),
           ),
-        ),
-      ),
-    );
-
+        ));
   }
-
 }
 
-class LoadingDialog extends StatelessWidget{
-  CustomTheme _theme ;
+class LoadingDialog extends StatelessWidget {
+  CustomTheme _theme;
+
   final double top;
   final double width;
   final double height;
-  LoadingDialog({this.top, this.width:60, this.height:60}){
+
+  LoadingDialog({this.top, this.width: 60, this.height: 60}) {
     _theme = CustomTheme.instance;
   }
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -208,13 +245,11 @@ class LoadingDialog extends StatelessWidget{
         width: width,
         height: height,
         margin: EdgeInsets.only(top: top),
-        child:  CircularProgressIndicator(
+        child: CircularProgressIndicator(
           backgroundColor: _theme.greyColor,
           valueColor: AlwaysStoppedAnimation(_theme.primaryColor),
         ),
       ),
     );
   }
-
-
 }

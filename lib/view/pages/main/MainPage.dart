@@ -54,6 +54,7 @@ class MainPage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+
                         Text("Loading Map",style: _theme.boxSecondaryTextBold,),
                         CircularProgressIndicator(
                           backgroundColor: _theme.greyColor,
@@ -66,6 +67,14 @@ class MainPage extends StatelessWidget {
               }else {
                 return Stack(
                   children: [
+                    Container(
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              image: AssetImage('images/PageLogo.jpg'),
+                              fit: BoxFit.cover
+                          )
+                      ),
+                    ),
                     GoogleMapSection(),
                     MenuButton(),
                     Padding(
@@ -327,3 +336,4 @@ class CircleButton extends StatelessWidget{
     );
   }
 }
+
