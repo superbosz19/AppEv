@@ -254,28 +254,36 @@ class _HelpScreenState extends State<HelpScreen> {
                 child: Column(
                   // crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+
                     Padding(
                       padding: const EdgeInsets.only(
-                        left: 120,),
+                        //left: 120,
+                      ),
                       child: Row(
                         children: [
+                          Spacer(),
                           Text("POWERED BY",style: TextStyle(fontSize: 12),),
                           Image.asset(
                             "images/Phithan_Green_logo.png",
                             height: 100,
                             //width: 100,
                           ),
+                          Spacer(),
                         ],
                       ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(
-                          left: 140, right: 150, bottom: 30),
+
+
+                         // left: 140, right: 150, bottom: 30
+                      ),
                       child: Text(
                         "( Ver. 0.8 )",
                         style: TextStyle(color: Colors.grey),
                       ),
                     ),
+
                   ],
                 ),
               ),

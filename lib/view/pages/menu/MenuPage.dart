@@ -612,9 +612,11 @@ class _MenuListState extends State<MenuList> {
                     ),
                     Row(
                       children: [
+                        Spacer(),
                         Padding(
                           padding: const EdgeInsets.only(
-                              left: 150, right: 125, top: 16),
+                             // left: 150, right: 125, top: 16
+                          ),
                           child: TextButton(
                             child: Text(
                               "Log out",
@@ -644,7 +646,7 @@ class _MenuListState extends State<MenuList> {
                             },
                           ),
                         ),
-                        // Icon(Icons.eco_outlined,color: Colors.redAccent,)
+                        Spacer(),// Icon(Icons.eco_outlined,color: Colors.redAccent,)
                       ],
                     ),
                     // SizedBox(
@@ -652,14 +654,16 @@ class _MenuListState extends State<MenuList> {
                     // ),
                     Container(
                       child: Column(
-                        // crossAxisAlignment: CrossAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                              left: 95,
+                              //left: 90,
                             ),
                             child: Row(
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
+                                Spacer(),
                                 Text(
                                   "POWERED BY",
                                   style: TextStyle(fontSize: 12),
@@ -669,12 +673,14 @@ class _MenuListState extends State<MenuList> {
                                   height: 100,
                                   //width: 100,
                                 ),
+                                Spacer(),
                               ],
                             ),
                           ),
                           Padding(
                             padding: const EdgeInsets.only(
-                                left: 130, right: 150, bottom: 30),
+                                //left: 130, right: 150, bottom: 30
+                            ),
                             child: Text(
                               "( Ver. 0.8 )",
                               style: TextStyle(color: Colors.grey),
