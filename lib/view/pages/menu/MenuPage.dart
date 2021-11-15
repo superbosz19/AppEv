@@ -562,51 +562,57 @@ class _MenuListState extends State<MenuList> {
                     SizedBox(
                       height: 10,
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 16, right: 16, top: 16),
-                      child: Container(
-                        width: 350,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
+                  GestureDetector(
+                      onTap: (){
+                        Get.toNamed("/help-page");
+                      },
+                      child: Padding(
+                        padding:
+                        const EdgeInsets.only(left: 16, right: 16, top: 16),
+                        child: Container(
+                          width: 350,
+                          decoration: BoxDecoration(
                             color: Colors.white,
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 3), // changes position of shadow
+                            border: Border.all(
+                              color: Colors.white,
                             ),
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 20.0, top: 8, bottom: 8),
-                              child: Image.asset(
-                                "images/icon8.png",
-                                height: 40,
-                                width: 25,
+                            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset:
+                                Offset(0, 3), // changes position of shadow
                               ),
-                            ),
-                            MenuListButton(
-                              menuText: "Help & Support",
-                              // icon: Icons.help_outline,
-                              // iconSize: 30,
-                              onTap: () {
-                                Get.toNamed("/help-page");
-                              },
-                            ),
-                            //Icon(Icons.eco_outlined,color: Colors.green,)
-                          ],
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 20.0, top: 8, bottom: 8),
+                                child: Image.asset(
+                                  "images/icon8.png",
+                                  height: 40,
+                                  width: 25,
+                                ),
+                              ),
+                              MenuListButton(
+                                menuText: "Help & Support",
+                                // icon: Icons.help_outline,
+                                // iconSize: 30,
+                                onTap: () {
+                                  Get.toNamed("/help-page");
+                                },
+                              ),
+                              //Icon(Icons.eco_outlined,color: Colors.green,)
+                            ],
+                          ),
                         ),
                       ),
-                    ),
+                  ),
+
                     SizedBox(
                       height: 10,
                     ),
