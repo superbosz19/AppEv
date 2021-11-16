@@ -67,14 +67,14 @@ class MainPage extends StatelessWidget {
               }else {
                 return Stack(
                   children: [
-                    Container(
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('images/PageLogo.jpg'),
-                              fit: BoxFit.cover
-                          )
-                      ),
-                    ),
+                    // Container(
+                    //   decoration: BoxDecoration(
+                    //       image: DecorationImage(
+                    //           image: AssetImage('images/PageLogo.jpg'),
+                    //           fit: BoxFit.cover
+                    //       )
+                    //   ),
+                    // ),
                     GoogleMapSection(),
                     MenuButton(),
                     Padding(
