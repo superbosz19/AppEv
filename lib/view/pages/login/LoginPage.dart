@@ -191,6 +191,7 @@ class LoginPage extends StatelessWidget {
                                         padding: const EdgeInsets.fromLTRB(
                                             90, 5, 20, 0),
                                         child: Row(
+                                          crossAxisAlignment: CrossAxisAlignment.center,
                                           children: [
                                             Text("Don't have an account?"),
                                             SizedBox(
