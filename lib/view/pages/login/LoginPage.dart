@@ -15,11 +15,13 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     double _screenW = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
         resizeToAvoidBottomInset: true,
         body: SingleChildScrollView(
           child: Material(
             child: Container(
               color: Colors.white,
+              //height: double.infinity,
               child: Column(
                 //color: _theme.lightColor,
                 children: [
@@ -184,40 +186,44 @@ class LoginPage extends StatelessWidget {
                                   ),
                                 ),
                                 //SizedBox(height: 20),
-                                Center(
-                                  child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.center,
-                                    children: [
-                                      InkWell(
-                                        child: Padding(
-                                          padding:
-                                          const EdgeInsets.fromLTRB(
-                                              75, 5, 20, 0
+                                Container(
+                                  color: Colors.white,
+                                  child: Center(
+                                    child: Column(
+                                      crossAxisAlignment: CrossAxisAlignment.center,
+                                      children: [
+                                        InkWell(
+                                          child: Padding(
+                                            padding:
+                                            const EdgeInsets.fromLTRB(
+                                                75, 5, 20, 0
                                             ),
-                                          child: Row(
-                                            crossAxisAlignment: CrossAxisAlignment.center,
-                                            children: [
-                                              Text("Don't have an account?"),
-                                              SizedBox(
-                                                width: 5.0,
-                                              ),
-                                              Text(
-                                                "Sign up",
-                                                style: TextStyle(
-                                                    fontSize: 16,
-                                                    color: _theme.secondaryColor,
-                                                    fontWeight: FontWeight.bold
+                                            child: Row(
+                                              crossAxisAlignment: CrossAxisAlignment.center,
+                                              children: [
+                                                Text("Don't have an account?"),
+                                                SizedBox(
+                                                  width: 5.0,
+                                                ),
+                                                Text(
+                                                  "Sign up",
+                                                  style: TextStyle(
+                                                      fontSize: 16,
+                                                      color: _theme.secondaryColor,
+                                                      fontWeight: FontWeight.bold
                                                     // decoration: TextDecoration.underline
-                                                    ),
-                                              ),
-                                            ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
                                           ),
+                                          onTap: () => Get.toNamed("/signup"),
                                         ),
-                                        onTap: () => Get.toNamed("/signup"),
-                                      ),
-                                    ],
+                                      ],
+                                    ),
                                   ),
-                                )
+                                ),
+
                               ],
                             ),
                           ],
