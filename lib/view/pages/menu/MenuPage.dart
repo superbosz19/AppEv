@@ -160,47 +160,53 @@ class _MenuListState extends State<MenuList> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Container(
-                      width: 350,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed("/login");
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Container(
+                        width: 350,
+                        decoration: BoxDecoration(
                           color: Colors.white,
-                        ),
-                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
+                          border: Border.all(
+                            color: Colors.white,
                           ),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 10.0, top: 8, bottom: 8),
-                            child: Icon(
-                              Icons.commute_outlined,
-                              color: Colors.green,
-                              size: 40,
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.3),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
                             ),
-                          ),
-                          MenuListButton(
-                            menuText: "Log In",
-                            //icon: Icons.login,
-                            //iconSize: 30,
-                            onTap: () {
-                              Get.toNamed("/login");
-                            },
-                          ),
+                          ],
+                        ),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 10.0, top: 8, bottom: 8),
+                              child: Icon(
+                                Icons.commute_outlined,
+                                color: Colors.green,
+                                size: 40,
+                              ),
+                            ),
+                            MenuListButton(
+                              menuText: "Log In",
+                              //icon: Icons.login,
+                              //iconSize: 30,
+                              onTap: () {
+                                Get.toNamed("/login");
+                              },
+                            ),
 
-                          //Icon(Icons.eco,color: Colors.green,)
-                        ],
+                            //Icon(Icons.eco,color: Colors.green,)
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -213,47 +219,52 @@ class _MenuListState extends State<MenuList> {
                   //   iconSize: 30,
                   //   onTap: () { Get.toNamed("/signup");},
                   // ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(16.0),
-                    child: Container(
-                      width: 350,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        border: Border.all(
+                  GestureDetector(
+                    onTap: () {
+                      Get.toNamed("/help-page");
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Container(
+                        width: 350,
+                        decoration: BoxDecoration(
                           color: Colors.white,
-                        ),
-                        borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: Colors.grey.withOpacity(0.3),
-                            spreadRadius: 5,
-                            blurRadius: 7,
-                            offset: Offset(0, 3), // changes position of shadow
+                          border: Border.all(
+                            color: Colors.white,
                           ),
-                        ],
-                      ),
-                      child: Row(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.only(
-                                left: 10.0, top: 8, bottom: 8),
-                            child: Icon(
-                              Icons.help_outline,
-                              color: Colors.green,
-                              size: 40,
+                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.3),
+                              spreadRadius: 5,
+                              blurRadius: 7,
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
                             ),
-                          ),
-                          MenuListButton(
-                            menuText: "Help",
-                            //icon: Icons.help_outline,
-                            // iconSize: 30,
-                            onTap: () {
-                              Get.toNamed("/help-page");
-                            },
-                          ),
-                          // Icon(Icons.eco,color: Colors.green,)
-                        ],
+                          ],
+                        ),
+                        child: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                  left: 10.0, top: 8, bottom: 8),
+                              child: Icon(
+                                Icons.help_outline,
+                                color: Colors.green,
+                                size: 40,
+                              ),
+                            ),
+                            MenuListButton(
+                              menuText: "Help",
+                              //icon: Icons.help_outline,
+                              // iconSize: 30,
+                              onTap: () {
+                                Get.toNamed("/help-page");
+                              },
+                            ),
+                            // Icon(Icons.eco,color: Colors.green,)
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -362,102 +373,52 @@ class _MenuListState extends State<MenuList> {
                     SizedBox(
                       height: 12,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Container(
-                        //color: Colors.white,
-                        width: 350,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed("/profile-page");
+                      },
+                      child: Padding(
+                        padding: const EdgeInsets.all(16.0),
+                        child: Container(
+                          //color: Colors.white,
+                          width: 350,
+                          decoration: BoxDecoration(
                             color: Colors.white,
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 3), // changes position of shadow
+                            border: Border.all(
+                              color: Colors.white,
                             ),
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 20.0, top: 8, bottom: 8),
-                              child: Image.asset(
-                                "images/icon1.png",
-                                height: 40,
-                                width: 25,
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8.0)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset:
+                                    Offset(0, 3), // changes position of shadow
                               ),
-                            ),
-                            MenuListButton(
-                              menuText: "Profile",
-                              //icon: Icons.person_rounded,
-                              //iconSize: 30,
-                              onTap: () {
-                                Get.toNamed("/profile-page");
-                              },
-                            ),
-                            //Icon(Icons.eco_outlined,color: Colors.green,)
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 16, right: 16),
-                      child: Container(
-                        width: 350,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.white,
+                            ],
                           ),
-                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 3), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(
-                              left: 20.0, top: 8, bottom: 8),
                           child: Row(
                             children: [
-                              Image.asset(
-                                "images/icon2.png",
-                                height: 40,
-                                width: 25,
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 20.0, top: 8, bottom: 8),
+                                child: Image.asset(
+                                  "images/icon1.png",
+                                  height: 40,
+                                  width: 25,
+                                ),
                               ),
                               MenuListButton(
-                                menuText: "Payment",
-                                // icon: Icons.payment_sharp,
+                                menuText: "Profile",
+                                //icon: Icons.person_rounded,
                                 //iconSize: 30,
                                 onTap: () {
-                                  // Get.snackbar(
-                                  //   "Hey i'm a Get SnackBar!", // title
-                                  //   "It's unbelievable! I'm using SnackBar without context, without boilerplate, without Scaffold, it is something truly amazing!", // message
-                                  //   icon: Icon(Icons.alarm),
-                                  //   shouldIconPulse: true,
-                                  //   barBlur: 20,
-                                  //   isDismissible: true,
-                                  //   duration: Duration(seconds: 300),
-                                  // );
-                                  Get.toNamed("/payment-config");
+                                  Get.toNamed("/profile-page");
                                 },
                               ),
-                              // Icon(Icons.eco_outlined,color: Colors.green,)
+                              //Icon(Icons.eco_outlined,color: Colors.green,)
                             ],
                           ),
                         ),
@@ -466,109 +427,12 @@ class _MenuListState extends State<MenuList> {
                     SizedBox(
                       height: 10,
                     ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 16, right: 16, top: 16),
-                      child: Container(
-                        width: 350,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.white,
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 3), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 20.0, top: 8.0, bottom: 8),
-                              child: Image.asset(
-                                "images/icon3.png",
-                                height: 40,
-                                width: 25,
-                              ),
-                            ),
-                            MenuListButton(
-                              menuText: "Favorites",
-                              // icon: Icons.star_border_outlined,
-                              // iconSize: 30,
-                              onTap: () {
-                                Get.to(() => FavoritePage());
-                              },
-                            ),
-                            //Icon(Icons.eco_outlined,color: Colors.green,)
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsets.only(left: 16, right: 16, top: 16),
-                      child: Container(
-                        width: 350,
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          border: Border.all(
-                            color: Colors.white,
-                          ),
-                          borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.grey.withOpacity(0.3),
-                              spreadRadius: 5,
-                              blurRadius: 7,
-                              offset:
-                                  Offset(0, 3), // changes position of shadow
-                            ),
-                          ],
-                        ),
-                        child: Row(
-                          children: [
-                            Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 20.0, top: 8, bottom: 8),
-                              child: Image.asset(
-                                "images/icon5.png",
-                                height: 40,
-                                width: 25,
-                              ),
-                            ),
-                            MenuListButton(
-                              menuText: "Charge History",
-                              // icon: Icons.access_time_rounded,
-                              // iconSize: 30,
-                              onTap: () {
-                                Get.toNamed("/charge-history");
-                              },
-                            ),
-                            //Icon(Icons.eco_outlined,color: Colors.green,)
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                  GestureDetector(
-                      onTap: (){
-                        Get.toNamed("/help-page");
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed("/payment-config");
                       },
                       child: Padding(
-                        padding:
-                        const EdgeInsets.only(left: 16, right: 16, top: 16),
+                        padding: const EdgeInsets.only(left: 16, right: 16),
                         child: Container(
                           width: 350,
                           decoration: BoxDecoration(
@@ -576,14 +440,187 @@ class _MenuListState extends State<MenuList> {
                             border: Border.all(
                               color: Colors.white,
                             ),
-                            borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8.0)),
                             boxShadow: [
                               BoxShadow(
                                 color: Colors.grey.withOpacity(0.3),
                                 spreadRadius: 5,
                                 blurRadius: 7,
                                 offset:
-                                Offset(0, 3), // changes position of shadow
+                                    Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(
+                                left: 20.0, top: 8, bottom: 8),
+                            child: Row(
+                              children: [
+                                Image.asset(
+                                  "images/icon2.png",
+                                  height: 40,
+                                  width: 25,
+                                ),
+                                MenuListButton(
+                                  menuText: "Payment",
+                                  // icon: Icons.payment_sharp,
+                                  //iconSize: 30,
+                                  onTap: () {
+                                    // Get.snackbar(
+                                    //   "Hey i'm a Get SnackBar!", // title
+                                    //   "It's unbelievable! I'm using SnackBar without context, without boilerplate, without Scaffold, it is something truly amazing!", // message
+                                    //   icon: Icon(Icons.alarm),
+                                    //   shouldIconPulse: true,
+                                    //   barBlur: 20,
+                                    //   isDismissible: true,
+                                    //   duration: Duration(seconds: 300),
+                                    // );
+                                    Get.toNamed("/payment-config");
+                                  },
+                                ),
+                                // Icon(Icons.eco_outlined,color: Colors.green,)
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed("/fav");
+                      },
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.only(left: 16, right: 16, top: 16),
+                        child: Container(
+                          width: 350,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Colors.white,
+                            ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8.0)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset:
+                                    Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 20.0, top: 8.0, bottom: 8),
+                                child: Image.asset(
+                                  "images/icon3.png",
+                                  height: 40,
+                                  width: 25,
+                                ),
+                              ),
+                              MenuListButton(
+                                menuText: "Favorites",
+                                // icon: Icons.star_border_outlined,
+                                // iconSize: 30,
+                                onTap: () {
+                                  Get.to(() => FavoritePage());
+                                },
+                              ),
+                              //Icon(Icons.eco_outlined,color: Colors.green,)
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed("/charge-history");
+                      },
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.only(left: 16, right: 16, top: 16),
+                        child: Container(
+                          width: 350,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Colors.white,
+                            ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8.0)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset:
+                                    Offset(0, 3), // changes position of shadow
+                              ),
+                            ],
+                          ),
+                          child: Row(
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    left: 20.0, top: 8, bottom: 8),
+                                child: Image.asset(
+                                  "images/icon5.png",
+                                  height: 40,
+                                  width: 25,
+                                ),
+                              ),
+                              MenuListButton(
+                                menuText: "Charge History",
+                                // icon: Icons.access_time_rounded,
+                                // iconSize: 30,
+                                onTap: () {
+                                  Get.toNamed("/charge-history");
+                                },
+                              ),
+                              //Icon(Icons.eco_outlined,color: Colors.green,)
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 10,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Get.toNamed("/help-page");
+                      },
+                      child: Padding(
+                        padding:
+                            const EdgeInsets.only(left: 16, right: 16, top: 16),
+                        child: Container(
+                          width: 350,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            border: Border.all(
+                              color: Colors.white,
+                            ),
+                            borderRadius:
+                                BorderRadius.all(Radius.circular(8.0)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.grey.withOpacity(0.3),
+                                spreadRadius: 5,
+                                blurRadius: 7,
+                                offset:
+                                    Offset(0, 3), // changes position of shadow
                               ),
                             ],
                           ),
@@ -611,7 +648,7 @@ class _MenuListState extends State<MenuList> {
                           ),
                         ),
                       ),
-                  ),
+                    ),
 
                     SizedBox(
                       height: 10,
@@ -621,15 +658,15 @@ class _MenuListState extends State<MenuList> {
                         Spacer(),
                         Padding(
                           padding: const EdgeInsets.only(
-                             // left: 150, right: 125, top: 16
-                          ),
+                              // left: 150, right: 125, top: 16
+                              ),
                           child: TextButton(
                             child: Text(
                               "Log out",
                               style: TextStyle(
-                                  color: Colors.green[800],
-                                  fontSize: 20,
-                                  //rfontFamily: 'PhithanGreen1'
+                                color: Colors.green[800],
+                                fontSize: 20,
+                                //rfontFamily: 'PhithanGreen1'
                               ),
                             ),
                             // icon: Icons.logout,
@@ -652,7 +689,8 @@ class _MenuListState extends State<MenuList> {
                             },
                           ),
                         ),
-                        Spacer(),// Icon(Icons.eco_outlined,color: Colors.redAccent,)
+                        Spacer(),
+                        // Icon(Icons.eco_outlined,color: Colors.redAccent,)
                       ],
                     ),
                     // SizedBox(
@@ -664,8 +702,8 @@ class _MenuListState extends State<MenuList> {
                         children: [
                           Padding(
                             padding: const EdgeInsets.only(
-                              //left: 90,
-                            ),
+                                //left: 90,
+                                ),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
@@ -686,7 +724,7 @@ class _MenuListState extends State<MenuList> {
                           Padding(
                             padding: const EdgeInsets.only(
                                 //left: 130, right: 150, bottom: 30
-                            ),
+                                ),
                             child: Text(
                               "( Ver. 0.8 )",
                               style: TextStyle(color: Colors.grey),

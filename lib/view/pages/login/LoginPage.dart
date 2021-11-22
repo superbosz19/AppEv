@@ -117,17 +117,17 @@ class LoginPage extends StatelessWidget {
                                     // Text("Remember me"),
                                     //Spacer(),
                                     SizedBox(
-                                      width: 20,
+                                      width: 10,
                                     ),
-                                    TextButton(
-                                      onPressed: () {},
-                                      child: Text(
-                                        "Forget Password ?",
-                                        style: TextStyle(color: Colors.grey
-                                            //decoration: TextDecoration.underline
-                                            ),
-                                      ),
-                                    ),
+                                    // TextButton(
+                                    //   onPressed: () {},
+                                    //   child: Text(
+                                    //     "Forget Password ?",
+                                    //     style: TextStyle(color: Colors.grey
+                                    //         //decoration: TextDecoration.underline
+                                    //         ),
+                                    //   ),
+                                    // ),
                                     // SizedBox(
                                     //     width: 10
                                     // ),
@@ -137,7 +137,7 @@ class LoginPage extends StatelessWidget {
                                   alignment: Alignment.bottomCenter,
                                   child: Padding(
                                     padding: const EdgeInsets.only(
-                                        left: 5, right: 5),
+                                        left: 5, right: 5,top: 20),
                                     child: SizedBox(
                                       width: 350,
                                       child: MaterialButton(
@@ -185,32 +185,37 @@ class LoginPage extends StatelessWidget {
                                 ),
                                 //SizedBox(height: 20),
                                 Center(
-                                  child: Material(
-                                    child: InkWell(
-                                      child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            90, 5, 20, 0),
-                                        child: Row(
-                                          crossAxisAlignment: CrossAxisAlignment.center,
-                                          children: [
-                                            Text("Don't have an account?"),
-                                            SizedBox(
-                                              width: 5.0,
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                    children: [
+                                      InkWell(
+                                        child: Padding(
+                                          padding:
+                                          const EdgeInsets.fromLTRB(
+                                              75, 5, 20, 0
                                             ),
-                                            Text(
-                                              "Sign up",
-                                              style: TextStyle(
-                                                  fontSize: 16,
-                                                  color: _theme.secondaryColor,
-                                                  fontWeight: FontWeight.bold
-                                                  // decoration: TextDecoration.underline
-                                                  ),
-                                            ),
-                                          ],
+                                          child: Row(
+                                            crossAxisAlignment: CrossAxisAlignment.center,
+                                            children: [
+                                              Text("Don't have an account?"),
+                                              SizedBox(
+                                                width: 5.0,
+                                              ),
+                                              Text(
+                                                "Sign up",
+                                                style: TextStyle(
+                                                    fontSize: 16,
+                                                    color: _theme.secondaryColor,
+                                                    fontWeight: FontWeight.bold
+                                                    // decoration: TextDecoration.underline
+                                                    ),
+                                              ),
+                                            ],
+                                          ),
                                         ),
+                                        onTap: () => Get.toNamed("/signup"),
                                       ),
-                                      onTap: () => Get.toNamed("/signup"),
-                                    ),
+                                    ],
                                   ),
                                 )
                               ],

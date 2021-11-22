@@ -50,6 +50,11 @@ class _HelpScreenState extends State<HelpScreen> {
                 "images/BannerHelp.png",
                 width: double.infinity,
               ),
+          GestureDetector(
+            onTap: () {
+
+            },
+            child:
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Container(
@@ -82,7 +87,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        // onPressed: () {},
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -99,7 +104,12 @@ class _HelpScreenState extends State<HelpScreen> {
                     ],
                   ),
                 ),
-              ),
+              ),),
+          GestureDetector(
+            onTap: () {
+
+            },
+            child:
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Container(
@@ -132,7 +142,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        // onPressed: () {},
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -149,7 +159,11 @@ class _HelpScreenState extends State<HelpScreen> {
                     ],
                   ),
                 ),
-              ),
+              ),),
+          GestureDetector(
+            onTap: () {
+            },
+            child:
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Container(
@@ -182,11 +196,11 @@ class _HelpScreenState extends State<HelpScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        //onPressed: () {},
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            "Damaged charger           ",
+                            "Damaged charger",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 18,
@@ -199,7 +213,12 @@ class _HelpScreenState extends State<HelpScreen> {
                     ],
                   ),
                 ),
-              ),
+              ),),
+          GestureDetector(
+            onTap: () {
+              // Get.toNamed("/login");
+            },
+            child:
               Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Container(
@@ -232,7 +251,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        // onPressed: () {},
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
@@ -249,7 +268,7 @@ class _HelpScreenState extends State<HelpScreen> {
                     ],
                   ),
                 ),
-              ),
+              ),),
               Container(
                 child: Column(
                   // crossAxisAlignment: CrossAxisAlignment.center,

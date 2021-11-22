@@ -37,10 +37,7 @@ class LinePayPage extends StatelessWidget {
           //WidgetsBinding.instance.addPostFrameCallback((_) => Get.toNamed("/charging-page"));
           return SizedBox.shrink();
         }
-
       }
     );
   }
-
-
 }

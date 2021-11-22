@@ -520,7 +520,6 @@ class GMapController extends GetxController {
         }else {
           return "Please Un-plug";
         }
-
       }
       break;
       default: {
@@ -539,12 +538,7 @@ class GMapController extends GetxController {
       await FirebaseService.instance.stopCharging(transaction);
     }
 
-
-
-
-
   }
-
   finishCharge(){
     if (timer != null){
       timer.cancel();

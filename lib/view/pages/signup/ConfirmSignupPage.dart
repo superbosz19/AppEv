@@ -11,8 +11,12 @@ import 'package:url_launcher/url_launcher.dart';
 class ConfirmSignupPage extends StatelessWidget {
   CustomTheme _theme = CustomTheme.instance;
 
-  var defaulfText = TextStyle(color: Colors.black,fontSize: 16,fontFamily: 'PhithanGreen1');
-  var linkText = TextStyle(color: Colors.green,fontSize: 16,fontFamily: 'PhithanGreen1');
+  var defaulfText = TextStyle(color: Colors.black,fontSize: 14,
+      //fontFamily: 'PhithanGreen1'
+  );
+  var linkText = TextStyle(color: Colors.green,fontSize: 14,
+      //fontFamily: 'PhithanGreen1'
+  );
 
   @override
   Widget build(BuildContext context) {
