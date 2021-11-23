@@ -1,3 +1,4 @@
+import 'package:ez_mobile/view/pages/PaymentConfig/PaymentConfigPage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
@@ -215,8 +216,9 @@ class _HelpScreenState extends State<HelpScreen> {
                 ),
               ),),
           GestureDetector(
-            onTap: () {
-              // Get.toNamed("/login");
+            onTap: ()  {
+              // Get.toNamed("/login")
+              ShowAlertDialog(context);
             },
             child:
               Padding(
@@ -255,7 +257,7 @@ class _HelpScreenState extends State<HelpScreen> {
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
-                            "FAQs                              ",
+                            "FAQs",
                             style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 18,

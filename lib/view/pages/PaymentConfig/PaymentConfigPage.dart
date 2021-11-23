@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:ez_mobile/blocs/theme_bloc.dart';
 import 'package:ez_mobile/components/text_label.dart';
 import 'package:ez_mobile/constants/colors.dart';
@@ -35,7 +37,39 @@ class PaymentConfigPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 0,
-        title: Text("Bank Accounts / Cards",style: TextStyle(color: Colors.black),),
+         leading:  Padding(
+           padding: const EdgeInsets.only(left: 12.0, top: 3.0),
+           child: Image.asset(
+             "images/Easy-Charge.png",
+             width: 160,
+             height: 140,
+           ),
+         ),
+        // IconButton(
+        //   color: Colors.black,
+        //   onPressed: () => Get.back(),
+        //   icon: Icon(Icons.menu_rounded),iconSize: 34,
+        // ),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20.0, top: 2.5),
+            child: IconButton(
+                onPressed: () => Get.back(),
+                icon: Icon(
+                  Icons.menu_rounded,
+                  color: Colors.black,
+                  size: 36,
+                )),
+          )
+          // MenuButton(
+          //   alignment: Alignment.topLeft,
+          //   menuClick: () => Get.back(),
+          // )
+        ],
+        title: Text(
+          "Bank Accounts / Cards",
+          style: TextStyle(color: Colors.black),
+        ),
       ),
       body: Material(
         child: SingleChildScrollView(
@@ -48,8 +82,7 @@ class PaymentConfigPage extends StatelessWidget {
                 padding: EdgeInsets.only(
                     //top: kToolbarHeight,
                     // left: _paddLR,
-                    right: _paddLR
-                ),
+                    right: _paddLR),
                 child: Stack(
                   children: [
                     Align(
@@ -92,12 +125,15 @@ class PaymentConfigPage extends StatelessWidget {
                             // )
                           ],
                         ),
-                        // SizedBox(
-                        //   height: 20,
-                        //   // height: _sectionH
-                        // ),
+                        SizedBox(
+                          height: 10,
+                          // height: _sectionH
+                        ),
                         TextLabel(
-                          label: Text("     My Credit Card",style: TextStyle(color: Colors.black45),),
+                          label: Text(
+                            "     My Credit Card",
+                            style: TextStyle(color: Colors.black45),
+                          ),
                           // Text("Your Credit Card",
                           //     style: _theme.textLabelStyle),
                           text: CreditCardList(),
@@ -142,13 +178,16 @@ class CreditCardList extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                Image.asset(
-                "images/icon_payment.png",
-                height: 70,
-                width: 70,),
-                  Text("Card ${card.maskedCardNo} ", style:
-                      TextStyle(fontWeight: FontWeight.normal,fontSize: 16),
-                  //font1
+                  Image.asset(
+                    "images/icon_payment.png",
+                    height: 70,
+                    width: 70,
+                  ),
+                  Text(
+                    "Card ${card.maskedCardNo} ",
+                    style:
+                        TextStyle(fontWeight: FontWeight.normal, fontSize: 16),
+                    //font1
                   ),
                   Spacer(),
                   // SizedBox(
@@ -177,26 +216,33 @@ class CreditCardList extends StatelessWidget {
         ));
         cards.add(
           Material(
-            child: Container( //ตัวก่อน InkWell
+            child: Container(
+              //ตัวก่อน InkWell
               width: double.infinity,
               decoration: BoxDecoration(
                 color: Colors.white,
                 border: Border.all(
                   color: Colors.white,
-                ),borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                  boxShadow: [
-              BoxShadow(
-              color: Colors.grey.withOpacity(0.3),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset:
-              Offset(0, 3), // changes position of shadow
-            ),],),
-              child: TextButton(onPressed: () { Get.toNamed("/addpayment-page");},
-              child:Text(
-                "+ Add card",
-                style: TextStyle(color: _theme.darkColor, fontSize: 16),
-              ),),
+                ),
+                borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.3),
+                    spreadRadius: 5,
+                    blurRadius: 7,
+                    offset: Offset(0, 3), // changes position of shadow
+                  ),
+                ],
+              ),
+              child: TextButton(
+                onPressed: () {
+                  Get.toNamed("/addpayment-page");
+                },
+                child: Text(
+                  "+ Add card",
+                  style: TextStyle(color: _theme.darkColor, fontSize: 16),
+                ),
+              ),
               // onTap: () {
               //   Get.toNamed("/addpayment-page");
               // },
@@ -232,4 +278,74 @@ class CreditCardList extends StatelessWidget {
   _showSnackBar(String msg) {
     Get.snackbar("Msg", msg);
   }
+}
+
+void ShowAlertDialog(BuildContext context) {
+  Widget okBtn = FlatButton(
+    onPressed: () {},
+    child: Text("Pay"),
+  );
+  Widget cancel = FlatButton(
+    onPressed: () {
+      Navigator.pop(context);
+    },
+    child: Text("Cancel"),
+  );
+  AlertDialog alert = AlertDialog(
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+    title: Text("Warning"),
+    content: Text("This is an alert Dialog demo which is create"),
+    actions: [okBtn, cancel],
+  );
+  showDialog(
+      context: context,
+      builder: (BuildContext buildercontext) {
+        return alert;
+      });
+  //     title: Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         Text(
+  //           "TEST",style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.bold),
+  //         )
+  //       ],
+  //     ),
+  // showDialog(
+  //   builder: (context)=> AlertDialog(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+  //     title: Row(
+  //       mainAxisAlignment: MainAxisAlignment.center,
+  //       children: [
+  //         Text(
+  //           "TEST",style: TextStyle(color: Colors.redAccent,fontWeight: FontWeight.bold),
+  //         )
+  //       ],
+  //     ),
+  //     content: Column(
+  //       mainAxisSize: MainAxisSize.min,
+  //       children: [
+  //         Container(
+  //           child: Text("100"),
+  //         ),
+  //         Row(
+  //           mainAxisAlignment: MainAxisAlignment.spaceAround,
+  //           children: [
+  //             Container(
+  //               width: 110,
+  //               child: RaisedButton(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+  //                 onPressed: (){},
+  //                 child: Text("Cancel"),
+  //               ),
+  //             ),
+  //             Container(
+  //               width: 110,
+  //               child: RaisedButton(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
+  //                 onPressed: (){},
+  //                 child: Text("Pay"),
+  //               ),
+  //             )
+  //           ],
+  //         )
+  //       ],
+  //     ),
+  // ),);
 }
