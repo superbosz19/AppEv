@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 //import 'package:ez_mobile/models/charger.dart';
 import 'package:ez_mobile/view/components/EncryptUtil.dart';
@@ -80,9 +82,11 @@ class ChargerUser{
   List<CardInfo> cards;
 
   Map<String, dynamic> favs;
+
+  List<PendingPayment> pendingPayments;
   ChargerUser({this.email, this.displayName, this.firstName, this.lastName, this.userID, this.userKeys, this.phone, this.avatar,this.verified,
     this.idCardImageFront, this.idCardImageBack,
-  this.idCard, this.favs});
+  this.idCard, this.favs, this.pendingPayments});
 
   String get primaryID {
     if (userKeys != null && userKeys.isNotEmpty && userKeys.containsKey("ALFENs")){
@@ -119,8 +123,8 @@ class ChargerUser{
           "s/a/ac/No_image_available.svg",
       idCardImageFront : doc.data()["idCardImageFront"] ?? "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg",
       favs:  doc.data()["favs"] ?? {},
+      pendingPayments : doc.data()["pendingPayments"] ?? [],
     );
-
   }
 
 
@@ -141,6 +145,7 @@ class ChargerUser{
       "verified": verified,
       "idCardImageBack": idCardImageBack,
       "idCardImageFront" : idCardImageFront,
+      "pendingPayments" : pendingPayments,
 
 
     };
@@ -150,3 +155,11 @@ class ChargerUser{
   }
 }
 
+class PendingPayment{
+  String TransID;
+  String TransBase;
+  Double amount;
+  String ChargerID;
+  String ChargerLocation;
+
+}

@@ -1,7 +1,11 @@
 import 'package:ez_mobile/view/pages/PaymentConfig/PaymentConfigPage.dart';
+import 'package:ez_mobile/view/pages/help/help_charger_screen.dart';
+import 'package:ez_mobile/view/pages/help/help_damaged_screen.dart';
+import 'package:ez_mobile/view/pages/help/help_issue_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class HelpScreen extends StatefulWidget {
   const HelpScreen({key}) : super(key: key);
@@ -53,7 +57,7 @@ class _HelpScreenState extends State<HelpScreen> {
               ),
           GestureDetector(
             onTap: () {
-
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> HelpIssueScreen()));
             },
             child:
               Padding(
@@ -108,7 +112,7 @@ class _HelpScreenState extends State<HelpScreen> {
               ),),
           GestureDetector(
             onTap: () {
-
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> HelpChargerScreen()));
             },
             child:
               Padding(
@@ -163,6 +167,7 @@ class _HelpScreenState extends State<HelpScreen> {
               ),),
           GestureDetector(
             onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=>  HelpDamagedscreen()));
             },
             child:
               Padding(
@@ -216,9 +221,18 @@ class _HelpScreenState extends State<HelpScreen> {
                 ),
               ),),
           GestureDetector(
-            onTap: ()  {
+            onTap: () async {
+              final url = 'https://phithangreen.com/';
+              if (await canLaunch(url)){
+                await launch(
+                  url,
+                  forceSafariVC: true, //IOS
+                  forceWebView: true, //Andriod
+                  enableJavaScript: true,//Andriod
+                );
+              }
               // Get.toNamed("/login")
-              ShowAlertDialog(context);
+              //ShowAlertDialog(context);
             },
             child:
               Padding(
@@ -304,7 +318,6 @@ class _HelpScreenState extends State<HelpScreen> {
                         style: TextStyle(color: Colors.grey),
                       ),
                     ),
-
                   ],
                 ),
               ),

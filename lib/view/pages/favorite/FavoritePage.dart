@@ -110,7 +110,6 @@ class FavLists extends StatelessWidget{
       children: infos,
     );
   }
-
 }
 
 class FavInfo extends StatelessWidget{

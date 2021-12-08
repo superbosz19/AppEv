@@ -55,7 +55,7 @@ class GoogleMapSection extends StatelessWidget {
 
 
 
-  void _onMapCreated(GoogleMapController controller) {
+  void _onMapCreated(GoogleMapController controller) async {
     _googleMapCtrl.complete(controller);
     gMapCtrl.googleMapController = controller;
   }

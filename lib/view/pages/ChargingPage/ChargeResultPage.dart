@@ -226,10 +226,7 @@ class ChargInfoSection extends StatelessWidget{
               ],
             ),
           );
-
     }
     );
   }
-
-
 }

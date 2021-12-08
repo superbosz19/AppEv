@@ -25,6 +25,7 @@ class ChangeAvatarPage extends StatelessWidget {
         .of(context)
         .size
         .height;
+    //kToolbarHeight;
     return GetX<ChangeAvatarController>(
   init: Get.find<ChangeAvatarController>(),
   initState: (_) {},
@@ -88,10 +89,7 @@ class ChangeAvatarPage extends StatelessWidget {
                                     fontWeight: FontWeight.w900,
                                     fontSize: 30,
                                   ),
-
                                 ),
-
-
                               ],
                             ),
                           ),

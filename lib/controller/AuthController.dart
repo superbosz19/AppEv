@@ -27,6 +27,8 @@ class AuthController extends GetxController{
     super.onInit();
   }
 
+
+
   void loadUser() {
     try  {
       if (user != null) {
@@ -34,11 +36,11 @@ class AuthController extends GetxController{
 
         //_chargerUser.bindStream(FirebaseService.instance.fetchUserAsStream(user.uid));
         _chargerUser.bindStream(FirebaseService.instance.fetchUserAsStream2(user.uid));
+
       }
     }catch(e){
       print(e.toString());
     }
-
   }
 
   Future<bool> createUserWithEmailAndPassword(String email, String pwd, ChargerUser chargerUser) async{
@@ -75,6 +77,7 @@ class AuthController extends GetxController{
       return false;
     }
   }
+
   void logout() async{
     try{
       await _auth.signOut();

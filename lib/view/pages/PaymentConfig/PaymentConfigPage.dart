@@ -1,5 +1,4 @@
 import 'dart:ffi';
-
 import 'package:ez_mobile/blocs/theme_bloc.dart';
 import 'package:ez_mobile/components/text_label.dart';
 import 'package:ez_mobile/constants/colors.dart';
@@ -282,7 +281,10 @@ class CreditCardList extends StatelessWidget {
 
 void ShowAlertDialog(BuildContext context) {
   Widget okBtn = FlatButton(
-    onPressed: () {},
+    onPressed: () {
+      // Get.to();
+      // Get.offUntil(page, (route) => false)
+    },
     child: Text("Pay"),
   );
   Widget cancel = FlatButton(

@@ -38,6 +38,7 @@ dependencies:
   #get current location
   geolocator: ^7.1.0
   url_launcher: ^6.0.12
+  stacked_services: ^0.8.15
 
   provider: ^5.0.0
   google_fonts: ^2.0.0
@@ -96,6 +97,7 @@ flutter:
     - images/Easy-Charge.png
     - images/marker.png
     - images/marker2.png
+    - images/marker3.png
     - images/icon1.png
     - images/icon2.png
     - images/icon3.png

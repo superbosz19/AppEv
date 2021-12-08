@@ -114,7 +114,9 @@ class IDCardController extends GetxController{
 
     }catch(error){
       print(error);
-      Get.snackbar("Error", error.toString(),colorText: Colors.redAccent, snackPosition: SnackPosition.TOP, dismissDirection: SnackDismissDirection.HORIZONTAL, duration: Duration(minutes: 1));
+      Get.snackbar("Error", error.toString(),colorText: Colors.redAccent, snackPosition: SnackPosition.TOP,
+         // dismissDirection: SnackDismissDirection.HORIZONTAL,
+          duration: Duration(minutes: 1));
 
     }finally{
       uploading = false;
@@ -139,7 +141,9 @@ class IDCardController extends GetxController{
       return await firebaseStorageRef.getDownloadURL();
     } on FirebaseException catch (error) {
       print(error);
-      Get.snackbar("Error", error.toString(),colorText: Colors.redAccent, snackPosition: SnackPosition.TOP, dismissDirection: SnackDismissDirection.HORIZONTAL, duration: Duration(minutes: 1));
+      Get.snackbar("Error", error.toString(),colorText: Colors.redAccent, snackPosition: SnackPosition.TOP,
+         // dismissDirection: SnackDismissDirection.HORIZONTAL,
+          duration: Duration(minutes: 1));
       return "UPLOAD_ERROR";
     }
   }

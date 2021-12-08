@@ -307,7 +307,7 @@ class ChargerListsSection extends StatelessWidget {
 
         );
         var rowGap = 10;
-        var rowHeight = (_sectionHeight / 3) - rowGap;
+        var rowHeight = (_sectionHeight / 2.7) - rowGap;
         var idx = 0;
         if (ctrl.chargerLoc !=null && ctrl.chargerLoc.chargers !=null) {
           for (var charger in ctrl.chargerLoc.chargers) {
@@ -329,7 +329,7 @@ class ChargerListsSection extends StatelessWidget {
           child: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Padding(
-              padding: const EdgeInsets.all(5.0),
+              padding: const EdgeInsets.all(2.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 //crossAxisAlignment: CrossAxisAlignment.start,
@@ -364,8 +364,7 @@ class ChargerMiniInfo extends StatelessWidget {
             color: cnn.status == "AVAILABLE"
                 ? _theme.secondaryColor
                 : _theme.darkColor,
-            size: rowHeight *
-                0.8,
+            size: rowHeight * 0.65,
           ),
         ),
       );
@@ -379,7 +378,7 @@ class ChargerMiniInfo extends StatelessWidget {
       Icon(
         _theme.icons['RIGHT_ARROW'],
         color: Colors.indigoAccent,
-        size: rowHeight * 0.8,
+        size: rowHeight * 0.65,
       ),
     );
 
@@ -440,10 +439,9 @@ class ChargerInfo extends StatelessWidget {
 
           InkWell(
             child: Container(
-              height: 50,
-              width: 50,
+
               //color: Colors.orange,
-                child: Icon(Icons.arrow_back_ios,color: Colors.redAccent, )),
+                child: Icon(Icons.menu_outlined,color: Colors.black, )),
             //Text(
             //   "< back",
             //   style: _theme.boxPrimaryTextBold,
@@ -508,7 +506,7 @@ class ChargerInfo extends StatelessWidget {
           );
 
           children.add(Padding(
-            padding: const EdgeInsets.only(left: 15.0, right: 15, top: 15),
+            padding: const EdgeInsets.only(left: 5.0, right: 10, top: 15),
             child: Material(
               child: InkWell(
                 child: cnn_block,
@@ -519,8 +517,6 @@ class ChargerInfo extends StatelessWidget {
                         print("select ${cnn.connectorName}");
                         //go to select payment page
                         gMapController.toSelectPayment(cnn);
-
-
 
 
                       }

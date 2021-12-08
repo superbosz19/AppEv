@@ -60,7 +60,9 @@ class ChangeAvatarController extends GetxController {
       });
     } on FirebaseException catch (error) {
       print(error);
-      Get.snackbar("Error", error.toString(),colorText: Colors.redAccent, snackPosition: SnackPosition.TOP, dismissDirection: SnackDismissDirection.HORIZONTAL, duration: Duration(minutes: 1));
+      Get.snackbar("Error", error.toString(),colorText: Colors.redAccent, snackPosition: SnackPosition.TOP,
+         // dismissDirection: SnackDismissDirection.HORIZONTAL,
+          duration: Duration(minutes: 1));
 
     }finally{
       _uploading.value = false;
