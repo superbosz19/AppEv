@@ -222,7 +222,7 @@ class _HelpScreenState extends State<HelpScreen> {
               ),),
           GestureDetector(
             onTap: () async {
-              final url = 'https://phithangreen.com/';
+              final url = 'https://phithangreen.com/th/faq/';
               if (await canLaunch(url)){
                 await launch(
                   url,
