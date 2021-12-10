@@ -8,7 +8,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class ChargerLocationInfo extends StatelessWidget {
   double _screenHeight;
   double _screenWidth;
@@ -100,16 +99,20 @@ class ImageSection extends StatelessWidget {
           return SizedBox.shrink();
         } else
           return Container(
-            padding: const EdgeInsets.all(0),
-            margin: const EdgeInsets.all(0),
-            height: sectionHeight,
-            width: ctrl.screenW,
-            decoration: CustomTheme.instance.boxBorderBottomOnly,
-            child: Image.network(
-              "https://f.ptcdn.info/285/006/000/1371443624-3659210151-o.jpg",
-              fit: BoxFit.cover,
-            ),
-          );
+              padding: const EdgeInsets.all(0),
+              margin: const EdgeInsets.all(0),
+              height: sectionHeight,
+              width: ctrl.screenW,
+              decoration: CustomTheme.instance.boxBorderBottomOnly,
+              child: Image.asset(
+                "images/imagenetwork1.png",
+                fit: BoxFit.cover,
+              )
+
+              // Image.network("https://f.ptcdn.info/285/006/000/1371443624-3659210151-o.jpg",
+              //   fit: BoxFit.cover,
+              // ),
+              );
       },
     );
   }
@@ -131,7 +134,7 @@ class LocationInfo extends StatelessWidget {
       init: Get.find<GMapController>(),
       initState: (_) {},
       builder: (ctrl) {
-        if (ctrl.chargerLoc !=null && ctrl.isLocationSelect) {
+        if (ctrl.chargerLoc != null && ctrl.isLocationSelect) {
           return Container(
             padding: const EdgeInsets.all(0),
             margin: const EdgeInsets.all(0),
@@ -147,14 +150,21 @@ class LocationInfo extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
-                      ctrl.chargerLoc.locationName,
-                      style: _theme.boxPrimaryTextBold,
-                    ),
-                    SizedBox(height: 5),
+                    Text(ctrl.chargerLoc.locationName,
+                        style: TextStyle(
+                            color: k2rrorColor,
+                            fontFamily: "PhithanGreen1",
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18)
+                        //_theme.boxPrimaryTextBold,
+                        ),
+                    SizedBox(height: 2),
                     Text(
                       ctrl.chargerLoc.locationAddress,
-                      style: TextStyle(color: Colors.black),
+                      style: TextStyle(
+                        color: Colors.black,
+                        //fontFamily: "PhithanGreen1",
+                      ),
                       //style: _theme.boxPrimaryText,
                     ),
                     SizedBox(height: 5),
@@ -165,7 +175,11 @@ class LocationInfo extends StatelessWidget {
                       ),
                       text: Text(
                         ctrl.chargerLoc.openPeriodDisplay,
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                          color: Colors.black,
+                          //fontFamily: "PhithanGreen1",
+                          //fontWeight: FontWeight.normal
+                        ),
                         //style: _theme.boxPrimaryText,
                       ),
                     ),
@@ -177,7 +191,10 @@ class LocationInfo extends StatelessWidget {
                       ),
                       text: Text(
                         ctrl.chargerLoc.locationTypeDisplay,
-                        style: TextStyle(color: Colors.black),
+                        style: TextStyle(
+                            color: Colors.black,
+                            //fontFamily: "PhithanGreen1"
+                        ),
                         //style: _theme.boxPrimaryText,
                       ),
                     ),
@@ -193,70 +210,91 @@ class LocationInfo extends StatelessWidget {
                               icon: Icon(Icons.add_location_alt,
                                   color: _theme.primaryColor),
                               iconSize: 30,
-                              onPressed: (){
-                                ctrl.openMap(ctrl.chargerLoc.geoPoint.latitude, ctrl.chargerLoc.geoPoint.longitude);
+                              onPressed: () {
+                                ctrl.openMap(ctrl.chargerLoc.geoPoint.latitude,
+                                    ctrl.chargerLoc.geoPoint.longitude);
                               },
                             ),
-
                             SizedBox(
                               width: 10,
                             ),
-                            (ctrl.chargerLoc.contactPhone != null && ctrl.chargerLoc.contactPhone.length > 0)?IconButton(
-                            icon: Icon(Icons.phone_outlined,
-                                color: _theme.primaryColor),
-                              iconSize: 30,
-                              onPressed: (){
-                                if (ctrl.chargerLoc.contactPhone != null && ctrl.chargerLoc.contactPhone.length == 1) {
-                                  ctrl.makeACall(ctrl.chargerLoc.contactPhone.first);
-                                }else if (ctrl.chargerLoc.contactPhone != null && ctrl.chargerLoc.contactPhone.length > 1){
-                                  List<Widget> children = List.generate(ctrl.chargerLoc.contactPhone.length, (index) =>
-                                      TextButton(
-                                        style: TextButton.styleFrom(
-                                          //padding: const EdgeInsets.all(16.0),
-                                          primary: _theme.primaryColor,
-                                          //textStyle: const TextStyle(fontSize: 20),
-                                          textStyle: TextStyle(
-                                            decoration: TextDecoration.underline,
+                            (ctrl.chargerLoc.contactPhone != null &&
+                                    ctrl.chargerLoc.contactPhone.length > 0)
+                                ? IconButton(
+                                    icon: Icon(Icons.phone_outlined,
+                                        color: _theme.primaryColor),
+                                    iconSize: 30,
+                                    onPressed: () {
+                                      if (ctrl.chargerLoc.contactPhone !=
+                                              null &&
+                                          ctrl.chargerLoc.contactPhone.length ==
+                                              1) {
+                                        ctrl.makeACall(
+                                            ctrl.chargerLoc.contactPhone.first);
+                                      } else if (ctrl.chargerLoc.contactPhone !=
+                                              null &&
+                                          ctrl.chargerLoc.contactPhone.length >
+                                              1) {
+                                        List<Widget> children = List.generate(
+                                          ctrl.chargerLoc.contactPhone.length,
+                                          (index) => TextButton(
+                                            style: TextButton.styleFrom(
+                                              //padding: const EdgeInsets.all(16.0),
+                                              primary: _theme.primaryColor,
+                                              //textStyle: const TextStyle(fontSize: 20),
+                                              textStyle: TextStyle(
+                                                decoration:
+                                                    TextDecoration.underline,
+                                              ),
+                                              backgroundColor: (index % 2) == 0
+                                                  ? _theme.greyColor
+                                                  : _theme.lightColor,
+                                            ),
+                                            onPressed: () {
+                                              var phone = ctrl.chargerLoc
+                                                  .contactPhone[index];
+                                              ctrl.makeACall(phone);
+                                            },
+                                            child: Text(ctrl.chargerLoc
+                                                .contactPhone[index]),
                                           ),
-                                          backgroundColor: (index%2)==0?_theme.greyColor:_theme.lightColor,
-                                        ),
-                                        onPressed: () {
-                                          var phone = ctrl.chargerLoc.contactPhone[index];
-                                          ctrl.makeACall(phone);
-                                        },
-                                        child:  Text(ctrl.chargerLoc.contactPhone[index]),
-                                      ),
-                                  );
+                                        );
 
-                                  Get.defaultDialog(
-                                    title: "Please select contact no.",
-                                    radius: 5.0,
-                                    content: Column(
-                                      mainAxisAlignment: MainAxisAlignment.start,
-                                      crossAxisAlignment: CrossAxisAlignment.stretch,
-                                      children: children,
-                                    ),
-
-                                  );
-                                }
-                              },
-                            ):SizedBox.shrink(),
-
+                                        Get.defaultDialog(
+                                          title: "Please select contact no.",
+                                          radius: 5.0,
+                                          content: Column(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.start,
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.stretch,
+                                            children: children,
+                                          ),
+                                        );
+                                      }
+                                    },
+                                  )
+                                : SizedBox.shrink(),
                           ],
                         ),
-                        (Get.find<AuthController>().chargerUser !=null)?
-                        IconButton(
-                          alignment: Alignment.centerRight,
-                          icon: Icon(
-                            //  Icons.star_border_outlined,
-                            Get.find<AuthController>().chargerUser.isFav(ctrl.chargerLoc.id)?Icons.star :Icons.star_border_outlined,
-                              color: _theme.primaryColor,
-                          ),
-                          onPressed: (){
-                            // ctrl.openMap(ctrl.chargerLoc.geoPoint.latitude, ctrl.chargerLoc.geoPoint.longitude);
-                            ctrl.handleFav(ctrl.chargerLoc);
-                          },
-                        ):SizedBox.shrink(),
+                        (Get.find<AuthController>().chargerUser != null)
+                            ? IconButton(
+                                alignment: Alignment.centerRight,
+                                icon: Icon(
+                                  //  Icons.star_border_outlined,
+                                  Get.find<AuthController>()
+                                          .chargerUser
+                                          .isFav(ctrl.chargerLoc.id)
+                                      ? Icons.star
+                                      : Icons.star_border_outlined,
+                                  color: _theme.primaryColor,
+                                ),
+                                onPressed: () {
+                                  // ctrl.openMap(ctrl.chargerLoc.geoPoint.latitude, ctrl.chargerLoc.geoPoint.longitude);
+                                  ctrl.handleFav(ctrl.chargerLoc);
+                                },
+                              )
+                            : SizedBox.shrink(),
                       ],
                     ),
                   ],
@@ -298,18 +336,22 @@ class ChargerListsSection extends StatelessWidget {
             children: [
               Text(
                 "Chargers",
-                style: TextStyle(color: k2rrorColor,fontWeight: FontWeight.bold, fontSize: 26),
+                style: TextStyle(
+                    color: k2rrorColor,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 26),
                 //style: _theme.boxPrimaryTextBold,
               ),
-              SizedBox(height: 10,),
+              SizedBox(
+                height: 10,
+              ),
             ],
           ),
-
         );
         var rowGap = 10;
         var rowHeight = (_sectionHeight / 2.7) - rowGap;
         var idx = 0;
-        if (ctrl.chargerLoc !=null && ctrl.chargerLoc.chargers !=null) {
+        if (ctrl.chargerLoc != null && ctrl.chargerLoc.chargers != null) {
           for (var charger in ctrl.chargerLoc.chargers) {
             children.add(ChargerMiniInfo(
               charger,
@@ -368,11 +410,9 @@ class ChargerMiniInfo extends StatelessWidget {
           ),
         ),
       );
-      connectors_.add(
-          SizedBox(
+      connectors_.add(SizedBox(
         width: 15,
-       )
-        );
+      ));
     }
     connectors_.add(
       Icon(
@@ -430,18 +470,21 @@ class ChargerInfo extends StatelessWidget {
       builder: (gMapController) {
         print(
             "ChargerInfo=> gMapController.charger = ${gMapController.charger}");
-        if (gMapController.chargerLoc == null || gMapController.charger == null) {
+        if (gMapController.chargerLoc == null ||
+            gMapController.charger == null) {
           return SizedBox.shrink();
         }
 
         List<Widget> children = [];
         children.add(
-
           InkWell(
             child: Container(
 
-              //color: Colors.orange,
-                child: Icon(Icons.menu_outlined,color: Colors.black, )),
+                //color: Colors.orange,
+                child: Icon(
+              Icons.menu_outlined,
+              color: Colors.black,
+            )),
             //Text(
             //   "< back",
             //   style: _theme.boxPrimaryTextBold,
@@ -462,9 +505,7 @@ class ChargerInfo extends StatelessWidget {
         );
 
         children.add(
-          SizedBox(
-              height: 10
-          ),
+          SizedBox(height: 10),
         );
 
         for (var cnn in gMapController.charger.connectors) {
@@ -517,8 +558,6 @@ class ChargerInfo extends StatelessWidget {
                         print("select ${cnn.connectorName}");
                         //go to select payment page
                         gMapController.toSelectPayment(cnn);
-
-
                       }
                     : () {
                         print("select ${cnn.connectorName}");
