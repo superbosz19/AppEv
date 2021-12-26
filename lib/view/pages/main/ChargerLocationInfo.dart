@@ -97,22 +97,28 @@ class ImageSection extends StatelessWidget {
       builder: (ctrl) {
         if (ctrl.charger != null) {
           return SizedBox.shrink();
-        } else
+        } else {
+          var image1 =Image.asset(
+            "images/imagenetwork1.png",
+          fit: BoxFit.cover,
+          );
+
+          if (ctrl.chargerLoc.locationImage != null && ctrl.chargerLoc.locationImage.length > 0){
+
+             image1 = Image.network(ctrl.chargerLoc.locationImage[0],
+               fit: BoxFit.cover,
+             );
+          }
           return Container(
               padding: const EdgeInsets.all(0),
               margin: const EdgeInsets.all(0),
               height: sectionHeight,
               width: ctrl.screenW,
               decoration: CustomTheme.instance.boxBorderBottomOnly,
-              child: Image.asset(
-                "images/imagenetwork1.png",
-                fit: BoxFit.cover,
-              )
+              child: image1,
 
-              // Image.network("https://f.ptcdn.info/285/006/000/1371443624-3659210151-o.jpg",
-              //   fit: BoxFit.cover,
-              // ),
-              );
+          );
+        }
       },
     );
   }

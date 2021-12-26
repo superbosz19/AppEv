@@ -702,7 +702,7 @@ class GMapController extends GetxController {
     if (_paidType == "LINEPAY") {
       Get.toNamed("/linepay");
     } else {
-      Get.to(CreditCardPage());
+      Get.to(()=> CreditCardPage());
     }
   }
 

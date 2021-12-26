@@ -111,8 +111,8 @@ class _HelpScreenState extends State<HelpScreen> {
                 ),
               ),),
           GestureDetector(
-            onTap: () {
-              Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> HelpChargerScreen()));
+            onTap: () => {
+              // Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context)=> HelpChargerScreen()));
             },
             child:
               Padding(
@@ -202,7 +202,9 @@ class _HelpScreenState extends State<HelpScreen> {
                         ),
                       ),
                       TextButton(
-                        //onPressed: () {},
+                        // onPressed: () {
+                        //
+                        // },
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
